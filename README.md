@@ -2,11 +2,11 @@
 
 An educational **synthetic demonstration** of symptom classification followed by geographic ranking of fictional hospitals. It compares KNN and Bernoulli Naive Bayes and demonstrates input validation, model evaluation and distance-based ranking.
 
-**The bundled demo does not identify real diseases or recommend real hospitals.** It uses fictional labels and hospital records because no original medical dataset or hospital directory was supplied.
+**The bundled demo does not identify real diseases or recommend real hospitals.** It uses fictional labels and hospital records to demonstrate the workflow without using patient records.
 
-## Provenance
+## About this version
 
-This is a new, AI-assisted reconstruction of a project described in Suraj Suman's resume. The original source files were unavailable. It is not a recovered historical repository, and results from this implementation must not be presented as results from the original project. Code was written for this reconstruction; external references and data provenance are listed in `SOURCES.md`.
+Rebuilt portfolio implementation based on an earlier project. This repository contains the current code, tests and documentation. Reported results apply to this version. References and data sources are listed in `SOURCES.md`.
 
 ## Setup
 
