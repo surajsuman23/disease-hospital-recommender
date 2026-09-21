@@ -1,0 +1,41 @@
+{
+  "seed": 42,
+  "train_rows": 192,
+  "test_rows": 64,
+  "models": {
+    "knn": {
+      "training_cv_macro_f1": 0.024135578235214977,
+      "test_accuracy": 0.0,
+      "test_macro_f1": 0.0
+    },
+    "naive_bayes": {
+      "training_cv_macro_f1": 0.23581118096724882,
+      "test_accuracy": 0.171875,
+      "test_macro_f1": 0.16602728047740836
+    }
+  },
+  "selected_model": "naive_bayes",
+  "notice": "SYNTHETIC DEMO: fictional condition labels and hospitals. Not a diagnosis or real care recommendation.",
+  "data_source": "generated synthetic patterns",
+  "predicted_demo_label": "demo_condition_a",
+  "nearby_fictional_hospitals": [
+    {
+      "name": "Fictional Demo Hospital A",
+      "distance_km": 1.553,
+      "latitude": 12.98,
+      "longitude": 77.6
+    },
+    {
+      "name": "Fictional Demo Hospital C",
+      "distance_km": 6.44,
+      "latitude": 13.02,
+      "longitude": 77.62
+    },
+    {
+      "name": "Fictional Demo Hospital D",
+      "distance_km": 8.595,
+      "latitude": 12.91,
+      "longitude": 77.64
+    }
+  ]
+}
