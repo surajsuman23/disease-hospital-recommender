@@ -668,3 +668,10 @@ progress::-moz-progress-bar {
     min-height: 230px;
   }
 }
+
+.count,
+.text-button.muted,
+.prediction-summary p,
+.hospital-list small {
+  color: #425d70;
+}
