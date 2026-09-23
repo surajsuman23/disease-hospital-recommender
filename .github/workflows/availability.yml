@@ -1,0 +1,14 @@
+name: Published app availability
+on:
+  schedule:
+    - cron: '19,49 * * * *'
+  workflow_dispatch:
+permissions:
+  contents: read
+jobs:
+  health:
+    runs-on: ubuntu-latest
+    timeout-minutes: 3
+    steps:
+      - run: curl --fail --location --retry 2 --max-time 30 https://suraj-disease-prediction.m16labs-0951.chatgpt.site/api/health/ready
+      - run: curl --fail --location --retry 2 --max-time 30 https://suraj-disease-prediction.m16labs-0951.chatgpt.site/api/v1/model

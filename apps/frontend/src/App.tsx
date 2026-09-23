@@ -1,5 +1,7 @@
 import { useEffect, useState, type FormEvent } from 'react';
 import { getModel, predict } from './api';
+import { ResultPanel } from './components/ResultPanel';
+import { ModelNotes } from './components/ModelNotes';
 import {
   SYMPTOMS,
   symptomLabels,
@@ -8,10 +10,6 @@ import {
 } from '../../../packages/contracts/src/index';
 
 type Symptom = (typeof SYMPTOMS)[number];
-const labelName = (label: string) =>
-  label
-    .replace('demo_condition_', 'Demo condition ')
-    .replace(/\b([abc])$/, (s) => s.toUpperCase());
 export function App() {
   const [model, setModel] = useState<ModelMetadata | null>(null);
   const [serviceError, setServiceError] = useState('');
@@ -111,7 +109,8 @@ export function App() {
           <a href="/" className="brand">
             <span className="brand-mark">DP</span>
             <span>
-              Disease prediction<small>Suraj Suman · Portfolio project</small>
+              Disease Prediction Workspace
+              <small>Suraj Suman · Portfolio project</small>
             </span>
           </a>
           <a
@@ -127,7 +126,7 @@ export function App() {
       <main>
         <section className="page-heading">
           <p className="eyebrow">SYMPTOM CLASSIFICATION & HOSPITAL RANKING</p>
-          <h1>Explore symptom patterns.</h1>
+          <h1>From symptoms to a ranked result.</h1>
           <p>
             Select example symptoms to run the model, then compare distances to
             fictional facilities.
@@ -151,6 +150,17 @@ export function App() {
             </button>
           </div>
         )}
+        <div className="flow-guide" aria-label="Workflow">
+          <span>
+            <b>1</b> Select example symptoms
+          </span>
+          <span>
+            <b>2</b> Set a location
+          </span>
+          <span>
+            <b>3</b> Compare the output
+          </span>
+        </div>
         <div className="workspace">
           <form
             className="card input-card"
@@ -280,168 +290,14 @@ export function App() {
               does not save prediction records.
             </p>
           </form>
-          <section
-            className="card result-card"
-            aria-label="Prediction results"
-            aria-busy={busy}
-          >
-            <div className="section-heading">
-              <h2>Result overview</h2>
-              <span
-                className={`status ${result ? 'complete' : ''}`}
-                role="status"
-              >
-                {busy ? 'Processing' : result ? 'Complete' : 'Ready for inputs'}
-              </span>
-            </div>
-            {error && (
-              <p className="error-banner" role="alert">
-                {error}
-              </p>
-            )}
-            {!result && (
-              <div className="empty-state">
-                <span className="empty-symbol" aria-hidden="true">
-                  ⌁
-                </span>
-                <h3>
-                  {busy ? 'Running the model' : 'Your results will appear here'}
-                </h3>
-                <p>
-                  {busy
-                    ? 'Classifying the selected features and calculating distances.'
-                    : 'Choose symptoms on the left, or use the example to explore the workflow.'}
-                </p>
-              </div>
-            )}
-            {result && (
-              <>
-                <div className="prediction-summary">
-                  <span className="eyebrow">SYNTHETIC MODEL OUTPUT</span>
-                  <h3>{labelName(result.label)}</h3>
-                  <p>
-                    {result.selectedSymptoms
-                      .map((id) => symptomLabels[id])
-                      .join(' · ')}
-                  </p>
-                </div>
-                <h3 className="subheading">Relative model scores</h3>
-                <p className="helper">
-                  These scores describe the synthetic classes. They are not
-                  disease probabilities or clinical confidence.
-                </p>
-                <div className="scores">
-                  {result.scores.map((score) => (
-                    <div className="score" key={score.label}>
-                      <div>
-                        <span>{labelName(score.label)}</span>
-                        <strong>{(score.score * 100).toFixed(1)}%</strong>
-                      </div>
-                      <progress
-                        aria-label={labelName(score.label) + ' model score'}
-                        max={1}
-                        value={score.score}
-                      />
-                    </div>
-                  ))}
-                </div>
-                <div className="result-divider" />
-                <h3 className="subheading">
-                  {result.rankingIncluded
-                    ? 'Nearest fictional facilities'
-                    : 'Hospital ranking is off'}
-                </h3>
-                {result.rankingIncluded ? (
-                  <>
-                    <p className="helper">
-                      Facilities supporting the demo class, ordered by distance.
-                    </p>
-                    <ol className="hospital-list">
-                      {result.hospitals.map((hospital, index) => (
-                        <li key={hospital.name}>
-                          <span className="hospital-rank">{index + 1}</span>
-                          <div>
-                            <strong>{hospital.name}</strong>
-                            <span>
-                              Fictional facility · {hospital.latitude},{' '}
-                              {hospital.longitude}
-                            </span>
-                          </div>
-                          <b>
-                            {hospital.distanceKm.toFixed(2)}
-                            <small>km</small>
-                          </b>
-                        </li>
-                      ))}
-                    </ol>
-                    {!result.hospitals.length && (
-                      <p>No matching fictional facilities.</p>
-                    )}
-                  </>
-                ) : (
-                  <p className="helper">
-                    Enable hospital ranking for a distance comparison.
-                  </p>
-                )}
-                <div className="result-footer">
-                  <span>Model: {result.modelVersion}</span>
-                  <button
-                    type="button"
-                    className="text-button"
-                    onClick={download}
-                  >
-                    Download JSON
-                  </button>
-                </div>
-              </>
-            )}
-          </section>
+          <ResultPanel
+            result={result}
+            busy={busy}
+            error={error}
+            download={download}
+          />
         </div>
-        <details className="model-notes">
-          <summary>Model, evaluation & privacy notes</summary>
-          {model ? (
-            <div className="notes-grid">
-              <section>
-                <h3>How this demo works</h3>
-                <p>
-                  A {model.algorithm} classifier uses eight binary features.{' '}
-                  {model.dataset}. The backend serves a versioned model exported
-                  from the Python training pipeline.
-                </p>
-                <p>
-                  The labels have no medical meaning. Low test performance is
-                  shown honestly; this model must not be used for healthcare
-                  decisions.
-                </p>
-              </section>
-              <section>
-                <h3>Measured evaluation</h3>
-                <dl>
-                  <div>
-                    <dt>Training / holdout rows</dt>
-                    <dd>
-                      {model.trainRows} / {model.testRows}
-                    </dd>
-                  </div>
-                  <div>
-                    <dt>Holdout accuracy</dt>
-                    <dd>{(model.holdoutAccuracy * 100).toFixed(1)}%</dd>
-                  </div>
-                  <div>
-                    <dt>Holdout macro F1</dt>
-                    <dd>{model.holdoutMacroF1.toFixed(3)}</dd>
-                  </div>
-                </dl>
-                <p>{model.privacy}</p>
-                <a href="/api/v1/openapi.json" target="_blank" rel="noreferrer">
-                  API specification ↗
-                </a>
-              </section>
-            </div>
-          ) : (
-            <p>Model details are unavailable until the API connects.</p>
-          )}
-        </details>
+        <ModelNotes model={model} />
         <footer className="page-footer">
           <span>Disease Prediction & Hospital Ranking</span>
           <span>Independent project · Suraj Suman</span>

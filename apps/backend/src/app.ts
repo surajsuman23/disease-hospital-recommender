@@ -2,8 +2,10 @@ import { Hono } from 'hono';
 import { predictionRequestSchema } from '../../../packages/contracts/src/index';
 import { infer, metadata, rankHospitals } from './inference';
 import openapi from '../../../docs/openapi.json';
+import { consumeBudget, type BudgetDatabase } from './rate-limit';
 
 export type Bindings = {
+  DB?: BudgetDatabase;
   ASSETS?: { fetch(request: Request): Promise<Response> };
   LOG_REQUESTS?: string;
 };
@@ -50,9 +52,23 @@ export function createApp(
     }
   });
   app.get('/api/health/live', (c) => c.json({ status: 'ok' }));
-  app.get('/api/health/ready', (c) =>
-    c.json({ status: 'ready', modelVersion: metadata.version, demoOnly: true }),
-  );
+  app.get('/api/health/ready', async (c) => {
+    if (c.env?.DB) {
+      try {
+        await c.env.DB.prepare(
+          'SELECT count FROM request_budget LIMIT 1',
+        ).first();
+      } catch {
+        return c.json({ status: 'unavailable' }, 503);
+      }
+    }
+    return c.json({
+      status: 'ready',
+      modelVersion: metadata.version,
+      demoOnly: true,
+      requestBudget: c.env?.DB ? 'distributed' : 'local',
+    });
+  });
   app.get('/api/v1/model', (c) => c.json(metadata));
   app.get('/api/v1/openapi.json', (c) => c.json(openapi));
   app.post('/api/v1/predictions', async (c) => {
@@ -75,25 +91,53 @@ export function createApp(
         error('BODY_TOO_LARGE', 'Request body exceeds 4096 bytes.', id),
         413,
       );
-    if (clock() - refreshed >= 60000) {
-      budget = maxRequests;
-      refreshed = clock();
+    if (c.env?.DB) {
+      try {
+        const limit = await consumeBudget(c.env.DB, clock(), maxRequests);
+        if (!limit.allowed) {
+          c.header('Retry-After', String(limit.retryAfter));
+          return c.json(
+            error(
+              'RATE_LIMITED',
+              'The shared request budget is temporarily exhausted. Please try again shortly.',
+              id,
+            ),
+            429,
+          );
+        }
+      } catch {
+        return c.json(
+          error(
+            'SERVICE_UNAVAILABLE',
+            'The request guard is unavailable. Please try again shortly.',
+            id,
+          ),
+          503,
+        );
+      }
+    } else {
+      if (clock() - refreshed >= 60000) {
+        budget = maxRequests;
+        refreshed = clock();
+      }
+      if (budget <= 0) {
+        c.header(
+          'Retry-After',
+          String(
+            Math.max(1, Math.ceil((60000 - (clock() - refreshed)) / 1000)),
+          ),
+        );
+        return c.json(
+          error(
+            'RATE_LIMITED',
+            'Too many requests. Please try again shortly.',
+            id,
+          ),
+          429,
+        );
+      }
+      budget--;
     }
-    if (budget <= 0) {
-      c.header(
-        'Retry-After',
-        String(Math.max(1, Math.ceil((60000 - (clock() - refreshed)) / 1000))),
-      );
-      return c.json(
-        error(
-          'RATE_LIMITED',
-          'Too many requests. Please try again shortly.',
-          id,
-        ),
-        429,
-      );
-    }
-    budget--;
     let raw: unknown;
     const reader = c.req.raw.body?.getReader();
     if (!reader)

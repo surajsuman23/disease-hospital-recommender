@@ -12,3 +12,6 @@ __pycache__/
 coverage/
 .openai/execution-profile.json
 .DS_Store
+playwright-report/
+test-results/
+load-test-result.json

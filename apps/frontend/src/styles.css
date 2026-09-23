@@ -564,3 +564,107 @@ progress::-moz-progress-bar {
     transition: none !important;
   }
 }
+
+/* Independent workspace theme and high-contrast supporting text. */
+:root {
+  background: #f0f7f8;
+  color: #153842;
+}
+.site-header {
+  background: #113b47;
+}
+.brand-mark {
+  background: #195366;
+  border-color: #59818c;
+}
+.page-heading h1 {
+  max-width: 800px;
+}
+.eyebrow {
+  color: #3d6672;
+}
+.primary-button {
+  background: #166a7e;
+}
+.primary-button:hover {
+  background: #105365;
+}
+.symptom.selected {
+  background: #eaf6f7;
+  border-color: #5d9aa7;
+  color: #164e5c;
+}
+.prediction-summary {
+  background: #e6f4f5;
+  border-left: 4px solid #23758a;
+}
+.prediction-summary h3 {
+  color: #155264;
+}
+.flow-guide {
+  display: flex;
+  gap: 24px;
+  flex-wrap: wrap;
+  margin: 0 0 22px;
+  color: #365d67;
+  font-size: 14px;
+}
+.flow-guide span {
+  display: flex;
+  align-items: center;
+  gap: 9px;
+}
+.flow-guide b {
+  border: 1px solid #aacbd2;
+  background: #fff;
+  border-radius: 50%;
+  width: 25px;
+  height: 25px;
+  display: grid;
+  place-items: center;
+  font-size: 12px;
+}
+.input-card {
+  position: sticky;
+  top: 20px;
+}
+.privacy-note,
+.hospital-list div > span,
+.result-footer > span,
+.page-footer {
+  color: #526b76;
+}
+.empty-state {
+  background: linear-gradient(180deg, #f6fafb, #fff);
+  border: 1px dashed #c9dee3;
+  border-radius: 9px;
+  margin-top: 24px;
+  min-height: 350px;
+}
+.hospital-list li {
+  background: #f7fafb;
+  padding: 16px 12px;
+  margin-bottom: 8px;
+  border: 1px solid #e0ebee;
+  border-radius: 7px;
+}
+.hospital-rank {
+  background: #e0eff2;
+  color: #285563;
+}
+.card {
+  border-color: #d1e3e7;
+  box-shadow: 0 5px 18px #15384206;
+}
+@media (max-width: 900px) {
+  .input-card {
+    position: static;
+  }
+  .flow-guide {
+    gap: 12px;
+    font-size: 13px;
+  }
+  .empty-state {
+    min-height: 230px;
+  }
+}

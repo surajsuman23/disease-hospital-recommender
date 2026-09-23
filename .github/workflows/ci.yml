@@ -43,3 +43,49 @@ jobs:
           cache: npm
       - run: npm ci
       - run: npx vitest run tests/inference.test.ts
+
+  browser:
+    runs-on: ubuntu-latest
+    timeout-minutes: 15
+    steps:
+      - uses: actions/checkout@v4
+      - uses: actions/setup-node@v4
+        with:
+          node-version-file: .nvmrc
+          cache: npm
+      - run: npm ci
+      - run: npm run build
+      - run: npx playwright install --with-deps chromium firefox webkit
+      - run: npm run test:browser
+      - uses: actions/upload-artifact@v4
+        if: always()
+        with:
+          name: browser-report
+          path: playwright-report/
+          retention-days: 7
+  container:
+    runs-on: ubuntu-latest
+    timeout-minutes: 15
+    steps:
+      - uses: actions/checkout@v4
+      - run: docker build -t disease-demo .
+      - run: docker run -d --name disease-demo -p 127.0.0.1:8200:8200 disease-demo
+      - run: |
+          for i in $(seq 1 30); do
+            if curl --fail http://127.0.0.1:8200/api/health/ready; then exit 0; fi
+            sleep 2
+          done
+          docker logs disease-demo
+          exit 1
+      - uses: actions/setup-node@v4
+        with:
+          node-version-file: .nvmrc
+      - run: node scripts/load-test.mjs
+      - run: test "$(docker exec disease-demo id -u)" != "0"
+      - uses: actions/upload-artifact@v4
+        if: always()
+        with:
+          name: load-test-result
+          path: load-test-result.json
+      - run: docker rm -f disease-demo
+        if: always()
