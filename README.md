@@ -7,9 +7,9 @@ An educational **synthetic demonstration** of symptom classification followed by
 
 **The bundled demo does not identify real diseases or recommend real hospitals.** It uses fictional labels and hospital records to demonstrate the workflow without using patient records.
 
-## About this version
+## Implementation
 
-Rebuilt portfolio implementation based on an earlier project. This repository contains the current code, tests and documentation. Reported results apply to this version. References and data sources are listed in `SOURCES.md`.
+This repository includes the command-line implementation, an interactive browser demo, tests and documentation. Reported results apply to the documented implementation and runtime. References and data sources are listed in `SOURCES.md`.
 
 ## Setup
 
