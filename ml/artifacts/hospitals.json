@@ -1,26 +1,41 @@
 [
   {
-    "name": "Fictional Demo Hospital A",
-    "latitude": 12.98,
-    "longitude": 77.6,
-    "conditions": "demo_condition_a;demo_condition_b"
+    "id": "st-johns",
+    "name": "St. John's Medical College Hospital",
+    "address": "St.John's Medical College Hospital, Sarjapur Road, Kormangala West, Bengaluru South City Corporation, Bengaluru, Bangalore South, Bengaluru Urban, Karnataka, 560034, India",
+    "latitude": 12.9296784,
+    "longitude": 77.6183585,
+    "website": "https://bengaluruurban.nic.in/en/public-utility/st-johns-medical-college-hospital/",
+    "mapUrl": "https://www.openstreetmap.org/relation/17069662",
+    "area": "Koramangala",
+    "source": "OpenStreetMap contributors, ODbL; district hospital directory",
+    "verifiedOn": "2026-09-23",
+    "fictional": false
   },
   {
-    "name": "Fictional Demo Hospital B",
-    "latitude": 12.94,
-    "longitude": 77.58,
-    "conditions": "demo_condition_c"
+    "id": "victoria",
+    "name": "Victoria Hospital",
+    "address": "Victoria Hospital, BGS Flyover, K.R Market, Bengaluru Central City Corporation, Bengaluru, Bangalore North, Bengaluru Urban, Karnataka, 560018, India",
+    "latitude": 12.9635035,
+    "longitude": 77.5737113,
+    "website": "https://victoriahospital.karnataka.gov.in/english",
+    "mapUrl": "https://www.openstreetmap.org/way/150350476",
+    "area": "K.R. Market",
+    "source": "OpenStreetMap contributors, ODbL; district hospital directory",
+    "verifiedOn": "2026-09-23",
+    "fictional": false
   },
   {
-    "name": "Fictional Demo Hospital C",
-    "latitude": 13.02,
-    "longitude": 77.62,
-    "conditions": "all"
-  },
-  {
-    "name": "Fictional Demo Hospital D",
-    "latitude": 12.91,
-    "longitude": 77.64,
-    "conditions": "all"
+    "id": "bowring",
+    "name": "Bowring and Lady Curzon Hospitals",
+    "address": "Bowring and Lady Curzon Hospitals, Lady Curzon Road, Tasker Town, Shivajinagar, Bengaluru Central City Corporation, Bengaluru, Bangalore North, Bengaluru Urban, Karnataka, 560001, India",
+    "latitude": 12.983343,
+    "longitude": 77.6046868,
+    "website": "https://bengaluruurban.nic.in/en/public-utility/bowringhospital/",
+    "mapUrl": "https://www.openstreetmap.org/way/45444044",
+    "area": "Shivajinagar",
+    "source": "OpenStreetMap contributors, ODbL; district hospital directory",
+    "verifiedOn": "2026-09-23",
+    "fictional": false
   }
 ]

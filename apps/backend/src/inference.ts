@@ -1,42 +1,42 @@
 import model from '../../../ml/artifacts/model.json';
-import hospitals from '../../../ml/artifacts/hospitals.json';
+import directory from '../../../ml/artifacts/hospitals.json';
+import conditionData from '../../../ml/data/ddxplus/conditions.json';
 import {
   SYMPTOMS,
-  symptomLabels,
+  symptomCatalogue,
   type ModelMetadata,
+  type Hospital,
 } from '../../../packages/contracts/src/index';
-
+const conditions = conditionData as Record<
+  string,
+  { 'icd10-id': string; symptoms: Record<string, unknown> }
+>;
 if (
   model.features.join(',') !== SYMPTOMS.join(',') ||
-  model.algorithm !== 'BernoulliNB' ||
   model.clinicalUse !== false
-) {
-  throw new Error(
-    'Unsupported model artifact. Re-export and validate before serving.',
-  );
-}
+)
+  throw new Error('Model catalogue mismatch');
+export const hospitals = directory as Hospital[];
 export function infer(symptoms: readonly string[]) {
-  const selected = new Set(symptoms);
   if (symptoms.some((s) => !model.features.includes(s)))
     throw new Error('Unknown feature');
-  const logScores = model.classes.map(
+  const indices = symptoms.map((s) => model.features.indexOf(s));
+  // Unchecked features are UNKNOWN; include positive evidence only.
+  const logits = model.classes.map(
     (_, k) =>
       model.classLogPrior[k] +
-      model.features.reduce((sum, feature, j) => {
-        const logP = model.featureLogProbability[k][j];
-        return (
-          sum + (selected.has(feature) ? logP : Math.log1p(-Math.exp(logP)))
-        );
-      }, 0),
+      indices.reduce((sum, j) => sum + model.featureLogProbability[k][j], 0),
   );
-  const maximum = Math.max(...logScores);
-  const weights = logScores.map((score) => Math.exp(score - maximum));
-  const total = weights.reduce((sum, value) => sum + value, 0);
-  const scores = model.classes.map((label, index) => ({
+  const max = Math.max(...logits);
+  const weights = logits.map((v) => Math.exp(v - max));
+  const total = weights.reduce((a, b) => a + b, 0);
+  const scores = model.classes.map((label, k) => ({
     label,
-    score: weights[index] / total,
+    score: weights[k] / total,
+    matchedSymptoms: symptoms.filter((s) => s in conditions[label].symptoms),
+    icd10: conditions[label]['icd10-id'],
   }));
-  return { label: scores[logScores.indexOf(maximum)].label, scores };
+  return { label: scores[logits.indexOf(max)].label, scores };
 }
 export function haversineKm(
   lat1: number,
@@ -60,20 +60,15 @@ export function haversineKm(
       Math.sin(((lon2 - lon1) * rad) / 2) ** 2;
   return 6371.0088 * 2 * Math.asin(Math.sqrt(Math.min(1, Math.max(0, a))));
 }
+
 export function rankHospitals(
-  label: string,
+  _label: string,
   location: { latitude: number; longitude: number },
   limit: number,
 ) {
   return hospitals
-    .filter(
-      (h) => h.conditions.split(';').includes(label) || h.conditions === 'all',
-    )
     .map((h) => ({
-      name: h.name,
-      latitude: h.latitude,
-      longitude: h.longitude,
-      fictional: true as const,
+      ...h,
       distanceKm:
         Math.round(
           haversineKm(
@@ -88,18 +83,23 @@ export function rankHospitals(
     .slice(0, limit);
 }
 export const metadata: ModelMetadata = {
-  name: 'Disease prediction demonstration',
+  name: 'Arovia disease research',
   version: model.version,
   demoOnly: true,
   algorithm: model.algorithm,
-  symptoms: SYMPTOMS.map((id) => ({ id, label: symptomLabels[id] })),
+  symptoms: symptomCatalogue,
+  conditions: model.classes.map((name) => ({
+    name,
+    icd10: conditions[name]['icd10-id'],
+    symptoms: Object.keys(conditions[name].symptoms).filter((s) =>
+      SYMPTOMS.includes(s),
+    ),
+  })),
   dataset: model.dataset,
-  holdoutAccuracy: model.evaluation.models.naive_bayes.test_accuracy,
-  holdoutMacroF1: model.evaluation.models.naive_bayes.test_macro_f1,
-  trainRows: model.evaluation.train_rows,
-  testRows: model.evaluation.test_rows,
+  source: model.source,
+  ...model.evaluation,
   privacy:
-    'The API processes inputs to return a result. Application logs exclude symptoms, coordinates and request bodies. No prediction records are stored. Hosting-provider access logs may still record request metadata.',
+    'Inputs are processed for this response and are not saved as prediction records. The application keeps the current result only in page memory. Hosting access logs may contain request metadata.',
   notice:
-    'Synthetic educational demonstration. Condition labels and hospitals are fictional. This model is not suitable for diagnosis, treatment or choosing real care.',
+    'Research candidates from simulated DDXPlus cases. Real disease names; not a diagnosis or calibrated disease probability. Conditions outside the dataset are not considered.',
 };

@@ -5,7 +5,7 @@ import {
   metadataSchema,
 } from '../packages/contracts/src/index';
 const payload = {
-  symptoms: ['fever', 'cough'],
+  symptoms: ['E_91', 'E_201', 'E_97'],
   location: { latitude: 12.97, longitude: 77.59 },
 };
 const call = (
@@ -28,8 +28,10 @@ describe('API contract and defensive boundaries', () => {
     const result = predictionResponseSchema.parse(await response.json());
     expect(result.demoOnly).toBe(true);
     expect(result.hospitals).toHaveLength(3);
-    expect(result.hospitals[0].name).toBe('Fictional Demo Hospital A');
-    expect(result.hospitals[0].distanceKm).toBe(1.553);
+    expect(result.hospitals[0].name).toBe('Victoria Hospital');
+    expect(result.hospitals[0].distanceKm).toBeGreaterThan(0);
+    expect(result.scores).toHaveLength(49);
+    expect(result.label).not.toContain('demo_condition');
     expect(response.headers.get('X-Request-ID')).toBe(result.requestId);
     expect(response.headers.get('Cache-Control')).toBe('no-store');
     expect(response.headers.get('Content-Security-Policy')).toContain(
@@ -38,7 +40,7 @@ describe('API contract and defensive boundaries', () => {
   });
   it('does not rank hospitals unless coordinates are supplied', async () => {
     const result = await (
-      await call(createApp(), { symptoms: ['fever'] })
+      await call(createApp(), { symptoms: ['E_91', 'E_201', 'E_97'] })
     ).json();
     expect(result.rankingIncluded).toBe(false);
     expect(result.hospitals).toEqual([]);
@@ -47,7 +49,7 @@ describe('API contract and defensive boundaries', () => {
     {},
     { symptoms: [] },
     { symptoms: ['made_up'] },
-    { symptoms: ['fever', 'fever'] },
+    { symptoms: ['E_91', 'E_91', 'E_97'] },
     { ...payload, location: { latitude: 91, longitude: 0 } },
     { ...payload, location: { latitude: '12', longitude: 0 } },
     { ...payload, hospitalLimit: 0 },

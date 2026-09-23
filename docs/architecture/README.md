@@ -2,18 +2,18 @@
 
 ```mermaid
 flowchart LR
-  UI[React frontend] -->|HTTPS JSON| API[Hono API]
-  API --> Validate[Shared Zod request validation]
-  Validate --> Infer[BernoulliNB inference]
-  Infer --> Rank[Haversine facility ranking]
-  Train[Offline Python training] --> Artifact[Versioned JSON model]
-  Artifact --> Infer
+  Dashboard[React dashboard and routes] --> API[Hono API]
+  API --> Validation[Shared Zod contracts]
+  Validation --> Ranker[Positive-evidence NB ranker]
+  API --> Hospitals[Real hospital snapshot and distance ranking]
+  API --> Budget[Aggregate D1 request budget]
+  DDX[Official DDXPlus training split] --> Python[Offline Python training]
+  Python --> Artifact[Versioned model JSON]
+  Artifact --> Ranker
 ```
 
-The frontend owns form state, empty/loading/error states and result presentation. It never trains a model or loads Python. The API owns validation, classification, distance ranking and response serialization. Both use shared TypeScript contracts.
+The five frontend screens use hash routes so refresh/deep linking works with Node and Worker static adapters. Assessment data is in React memory, not localStorage, a user database or URLs. Changing inputs clears stale results. A reload clears the current assessment.
 
-Training lives in `ml/` and exports plain numeric arrays, rather than loading executable pickle files from clients. The generated model identifier is derived from the model parameters. The dataset digest and runtime versions are recorded alongside evaluation results. The API artifact is bundled at build time, so visitors cannot select arbitrary models or submit code.
+The Hono backend serves metadata, the hospital directory and predictions using strict shared schemas. The exported model contains plain numeric parameters; no user-supplied pickle/code is evaluated. Positive-only inference treats unselected symptoms as unknown. The separately sourced hospital directory is ranked by distance without disease-to-service claims.
 
-Deployment adapters are deliberately thin. `worker.ts` serves the API and delegates static assets to the hosting binding. `local.ts` supplies a Node server and static frontend hosting, with graceful termination and request timeouts. There are no cross-project imports or calls to the other portfolio apps.
-
-A D1 table stores one aggregate request-budget counter for the hosted Worker. It contains no visitor identifiers, symptoms or coordinates. Node mode retains an in-memory fallback. No authentication or prediction-record database is added because this is a public demonstration without user accounts or saved records. Introducing accounts or medical records would require a new data, authorization and privacy design rather than treating this demo as an existing patient system.
+Worker mode shares one aggregate request counter through D1. Node mode uses an in-memory fallback. The database contains no health data or visitor identifiers. Neither runtime requires another portfolio project. The CPU and diabetes apps remain independent repositories and deployments.

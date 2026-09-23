@@ -1,5 +1,6 @@
 import {
   metadataSchema,
+  hospitalSchema,
   predictionResponseSchema,
   type PredictionRequest,
 } from '../../../packages/contracts/src/index';
@@ -36,3 +37,7 @@ export const predict = async (input: PredictionRequest) =>
       body: JSON.stringify(input),
     }),
   );
+export const getHospitals = async () => {
+  const data = await request('/api/v1/hospitals');
+  return hospitalSchema.array().parse(data.hospitals);
+};

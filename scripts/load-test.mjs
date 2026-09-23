@@ -16,7 +16,7 @@ for (let round = 0; round < rounds; round++) {
           method: 'POST',
           headers: { 'Content-Type': 'application/json' },
           body: JSON.stringify({
-            symptoms: ['fever', 'cough'],
+            symptoms: ['E_91', 'E_201', 'E_97'],
             location: { latitude: 12.97, longitude: 77.59 },
           }),
           signal: AbortSignal.timeout(5000),

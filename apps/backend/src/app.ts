@@ -1,6 +1,6 @@
 import { Hono } from 'hono';
 import { predictionRequestSchema } from '../../../packages/contracts/src/index';
-import { infer, metadata, rankHospitals } from './inference';
+import { infer, metadata, rankHospitals, hospitals } from './inference';
 import openapi from '../../../docs/openapi.json';
 import { consumeBudget, type BudgetDatabase } from './rate-limit';
 
@@ -69,6 +69,7 @@ export function createApp(
       requestBudget: c.env?.DB ? 'distributed' : 'local',
     });
   });
+  app.get('/api/v1/hospitals', (c) => c.json({ hospitals }));
   app.get('/api/v1/model', (c) => c.json(metadata));
   app.get('/api/v1/openapi.json', (c) => c.json(openapi));
   app.post('/api/v1/predictions', async (c) => {
@@ -203,6 +204,8 @@ export function createApp(
       rankingIncluded: !!input.location,
       selectedSymptoms: input.symptoms,
       notice: metadata.notice,
+      evidenceLevel: input.symptoms.length < 5 ? 'limited' : 'expanded',
+      createdAt: new Date().toISOString(),
     });
   });
   app.all('/api/*', (c) =>

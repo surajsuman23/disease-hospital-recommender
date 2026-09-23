@@ -10,78 +10,86 @@ import {
 import '@testing-library/jest-dom/vitest';
 import { afterEach, expect, it, vi } from 'vitest';
 import { App } from '../apps/frontend/src/App';
-import { metadata } from '../apps/backend/src/inference';
-import { getModel, predict } from '../apps/frontend/src/api';
+import { metadata, hospitals, infer } from '../apps/backend/src/inference';
+import { getModel, getHospitals, predict } from '../apps/frontend/src/api';
 vi.mock('../apps/frontend/src/api', () => ({
   getModel: vi.fn(),
+  getHospitals: vi.fn(),
   predict: vi.fn(),
 }));
 afterEach(() => {
   cleanup();
   vi.resetAllMocks();
+  location.hash = '';
 });
-it('submits selected features and coordinates, renders results and clears stale output', async () => {
+function setup() {
   vi.mocked(getModel).mockResolvedValue(metadata);
+  vi.mocked(getHospitals).mockResolvedValue(hospitals);
+  window.scrollTo = vi.fn();
+  render(<App />);
+}
+it('opens a dedicated result route with real disease names and clears changed inputs', async () => {
+  const features = ['E_91', 'E_201', 'E_97', 'E_94', 'E_144'];
   vi.mocked(predict).mockResolvedValue({
     requestId: 'test',
     modelVersion: metadata.version,
     demoOnly: true,
-    label: 'demo_condition_a',
-    scores: [{ label: 'demo_condition_a', score: 1 }],
-    hospitals: [
-      {
-        name: 'Fictional Demo Hospital A',
-        distanceKm: 1.553,
-        latitude: 12.98,
-        longitude: 77.6,
-        fictional: true,
-      },
-    ],
-    rankingIncluded: true,
-    selectedSymptoms: ['fever', 'cough'],
+    ...infer(features),
+    hospitals: [],
+    rankingIncluded: false,
+    selectedSymptoms: features,
     notice: metadata.notice,
+    evidenceLevel: 'expanded',
+    createdAt: '2026-09-23T12:00:00Z',
   });
-  render(<App />);
+  setup();
+  fireEvent.click(screen.getByRole('button', { name: 'Try an example' }));
   await waitFor(() =>
     expect(
-      screen.getByRole('button', { name: /Run demonstration/ }),
+      screen.getByRole('button', { name: 'View disease candidates →' }),
     ).toBeEnabled(),
   );
-  fireEvent.click(screen.getByRole('button', { name: 'Use example' }));
-  fireEvent.click(screen.getByRole('button', { name: /Run demonstration/ }));
+  fireEvent.click(
+    screen.getByRole('button', { name: 'View disease candidates →' }),
+  );
+  await waitFor(() =>
+    expect(
+      screen.getByRole('heading', { name: 'Top 5 candidates' }),
+    ).toBeInTheDocument(),
+  );
+  expect(location.hash).toBe('#/results');
+  expect(screen.queryByText('Demo condition A')).not.toBeInTheDocument();
+  expect(predict).toHaveBeenCalledOnce();
+  fireEvent.click(screen.getByRole('button', { name: 'Edit symptoms' }));
+  fireEvent.click(screen.getByLabelText('Cough'));
+  fireEvent.click(screen.getByRole('link', { name: /Assessment results/ }));
   expect(
-    await screen.findByText('Fictional Demo Hospital A'),
+    screen.getByRole('heading', { name: 'No assessment yet' }),
   ).toBeInTheDocument();
-  expect(predict).toHaveBeenCalledWith({
-    symptoms: ['fever', 'cough'],
-    location: { latitude: 12.97, longitude: 77.59 },
-    hospitalLimit: 3,
-  });
-  fireEvent.click(screen.getByLabelText('Fatigue'));
-  expect(
-    screen.queryByText('Fictional Demo Hospital A'),
-  ).not.toBeInTheDocument();
 });
-it('blocks an empty selection and provides a recoverable API error', async () => {
-  vi.mocked(getModel).mockResolvedValue(metadata);
+it('blocks insufficient input and supports recovery from API failure', async () => {
   vi.mocked(predict).mockRejectedValue(new Error('Please try again.'));
-  render(<App />);
+  setup();
+  fireEvent.click(screen.getByRole('button', { name: 'Start assessment' }));
   await waitFor(() =>
     expect(
-      screen.getByRole('button', { name: /Run demonstration/ }),
+      screen.getByRole('button', { name: 'View disease candidates →' }),
     ).toBeEnabled(),
   );
-  fireEvent.click(screen.getByRole('button', { name: /Run demonstration/ }));
-  expect(screen.getByRole('alert')).toHaveTextContent(
-    'Select at least one symptom',
+  fireEvent.click(
+    screen.getByRole('button', { name: 'View disease candidates →' }),
   );
-  expect(predict).not.toHaveBeenCalled();
-  fireEvent.click(screen.getByLabelText('Fever'));
-  fireEvent.click(screen.getByRole('button', { name: /Run demonstration/ }));
+  expect(screen.getByRole('alert')).toHaveTextContent(
+    'Select at least three symptoms',
+  );
+  fireEvent.click(screen.getByRole('button', { name: 'Load example' }));
+  fireEvent.click(
+    screen.getByRole('button', { name: 'View disease candidates →' }),
+  );
   await waitFor(() =>
     expect(screen.getByRole('alert')).toHaveTextContent('Please try again.'),
   );
   expect(
-    screen.getByRole('button', { name: /Run demonstration/ }),
+    screen.getByRole('button', { name: 'Return to assessment' }),
   ).toBeEnabled();
 });
