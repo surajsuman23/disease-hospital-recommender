@@ -13,3 +13,9 @@
 - [scikit-learn Haversine distances](https://scikit-learn.org/stable/modules/generated/sklearn.metrics.pairwise.haversine_distances.html): mathematical reference; the repository implements the scalar formula using Python's standard `math` module and a mean Earth radius of 6371.0088 km.
 
 Accessed 2026-09-22. No third-party implementation was copied.
+
+## Browser interface references
+
+- Pyodide 0.27.5 runtime and package documentation: https://pyodide.org/en/0.27.5/usage/quickstart.html
+- Pyodide scientific package versions: https://pyodide.org/en/0.27.5/usage/packages-in-pyodide.html
+- Web Workers: https://developer.mozilla.org/en-US/docs/Web/API/Web_Workers_API

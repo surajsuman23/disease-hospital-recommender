@@ -1,5 +1,8 @@
 # Disease Prediction and Hospital Recommendation System
 
+**[Open interactive demo](https://suraj-suman-projects.m16labs-0951.chatgpt.site/hospital.html)**
+
+
 An educational **synthetic demonstration** of symptom classification followed by geographic ranking of fictional hospitals. It compares KNN and Bernoulli Naive Bayes and demonstrates input validation, model evaluation and distance-based ranking.
 
 **The bundled demo does not identify real diseases or recommend real hospitals.** It uses fictional labels and hospital records to demonstrate the workflow without using patient records.
@@ -51,3 +54,19 @@ Hospital data needs `name,latitude,longitude,conditions`; semicolons separate su
 ## What is needed for a real research extension
 
 A suitably licensed, documented dataset; an independently verified hospital directory; a justified clinical label-to-specialty mapping; external validation; and domain expert review. These are not supplied or claimed here. Do not use this demo to decide where or whether to seek medical care.
+
+## Browser interface
+
+The `docs/` folder contains a standalone browser interface. To run it locally from the repository root:
+
+```sh
+python3 -m http.server 8080 --directory docs
+```
+
+Open http://localhost:8080. Serve these files over HTTP or HTTPS; opening `index.html` directly as a file does not support the worker and module imports.
+
+The interface loads Python through Pyodide 0.27.5 in a dedicated Web Worker and executes the project's original Python module. The first run downloads Python and scientific packages from the jsDelivr CDN, so it needs an internet connection and may take a minute. Later runs reuse the loaded runtime while the page remains open. Inputs and calculations stay in the browser; there is no application account or server-side input storage.
+
+The browser runtime uses scikit-learn 1.6.1, pandas 2.2.3 and NumPy 2.0.2. These differ from the original desktop benchmark environment; exported result JSON records the actual runtime versions. Results should always be quoted with their runtime and split configuration.
+
+The public demo is hosted independently of this computer. The project can also be served from the `docs/` directory on a static host.
