@@ -43,14 +43,21 @@ export function AppShell({
 }) {
   return (
     <div className="app-layout">
-      <a className="skip-link" href="#main-content">
+      <a
+        className="skip-link"
+        href="#main-content"
+        onClick={(e) => {
+          e.preventDefault();
+          document.getElementById('main-content')?.focus();
+        }}
+      >
         Skip to content
       </a>
       <aside className="sidebar">
         <a className="brand" href="#/dashboard">
           <span className="brand-monogram">A</span>
           <span>
-            Arovia<small>HEALTH RESEARCH STUDIO</small>
+            Arovia<small>RESEARCH STUDIO</small>
           </span>
         </a>
         <p className="nav-label">WORKSPACE</p>

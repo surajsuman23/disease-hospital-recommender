@@ -5,7 +5,7 @@ build-backend = "setuptools.build_meta"
 [project]
 name = "disease-model"
 version = "1.0.0"
-description = "Synthetic classification model for a nonclinical portfolio demonstration"
+description = "DDXPlus positive-evidence disease ranker for nonclinical research"
 requires-python = ">=3.11"
 dependencies = ["numpy>=1.26,<3", "pandas>=2.2,<4", "scikit-learn>=1.5,<2"]
 

@@ -123,14 +123,14 @@ small {
 }
 .brand small {
   display: block;
-  font-size: 9px;
+  font-size: 12px;
   letter-spacing: 1.1px;
   font-weight: 500;
   color: #c7dadd;
   margin-top: 0;
 }
 .nav-label {
-  font-size: 10px;
+  font-size: 12px;
   letter-spacing: 1.8px;
   color: #a7c0c5;
   margin: 46px 14px 15px;
@@ -158,7 +158,7 @@ small {
   color: #123c42;
 }
 .nav-number {
-  font-size: 11px;
+  font-size: 12px;
   opacity: 0.8;
   font-variant-numeric: tabular-nums;
 }
@@ -168,7 +168,7 @@ small {
 }
 .sidebar-note .eyebrow {
   color: #aad0cf;
-  font-size: 10px;
+  font-size: 12px;
 }
 .sidebar-note p {
   color: #e3eeee;
@@ -195,12 +195,12 @@ small {
   background: #345059;
   display: grid;
   place-items: center;
-  font-size: 11px;
+  font-size: 12px;
 }
 .profile small {
   display: block;
   color: #aec7cc;
-  font-size: 10px;
+  font-size: 12px;
 }
 .main-area {
   min-width: 0;
@@ -225,7 +225,7 @@ small {
   border: 1px solid #dce6e8;
   padding: 7px 12px;
   border-radius: 99px;
-  font-size: 11px;
+  font-size: 12px;
   color: #436168;
   white-space: nowrap;
 }
@@ -246,7 +246,7 @@ main {
   font-size: 15px;
 }
 .eyebrow {
-  font-size: 10px;
+  font-size: 12px;
   font-weight: 650;
   letter-spacing: 1.6px;
   color: #34727b;
@@ -340,7 +340,7 @@ main {
   margin-bottom: 22px;
 }
 .hero-kicker {
-  font-size: 9px;
+  font-size: 12px;
   letter-spacing: 1.45px;
   color: #396771;
   font-weight: 600;
@@ -348,7 +348,7 @@ main {
 .hero-note {
   display: block;
   max-width: 360px;
-  font-size: 11px;
+  font-size: 12px;
   color: #425f68;
   margin-top: 16px;
 }
@@ -359,7 +359,7 @@ main {
   color: #fff;
   background: #14353cd9;
   padding: 4px 7px;
-  font-size: 9px;
+  font-size: 12px;
   border-radius: 4px;
 }
 .metric-grid {
@@ -387,7 +387,7 @@ main {
   overflow-wrap: anywhere;
 }
 .metric small {
-  font-size: 11px;
+  font-size: 12px;
   color: #5b747b;
 }
 .dashboard-bottom {
@@ -418,7 +418,7 @@ main {
   font-size: 18px;
 }
 .pill {
-  font-size: 10px;
+  font-size: 12px;
   padding: 5px 9px;
   border: 1px solid #c9dddd;
   border-radius: 99px;
@@ -457,7 +457,7 @@ main {
   display: flex;
   justify-content: space-between;
   gap: 20px;
-  font-size: 11px;
+  font-size: 12px;
   color: #5b7078;
 }
 .app-footer a {
@@ -519,7 +519,7 @@ input::placeholder {
   display: flex;
   justify-content: space-between;
   gap: 10px;
-  font-size: 11px;
+  font-size: 12px;
   color: #587079;
   padding: 6px 0 14px;
   border-bottom: 1px solid var(--line);
@@ -687,7 +687,7 @@ hr {
 .candidate-rank {
   font-family: Georgia, serif;
   font-size: 24px;
-  color: #668b92;
+  color: #3f6871;
   min-width: 30px;
 }
 .candidate-main {
@@ -712,7 +712,7 @@ hr {
 }
 .candidate-title small {
   display: block;
-  font-size: 10px;
+  font-size: 12px;
   color: #5c737a;
   text-align: right;
   font-weight: 400;
@@ -744,7 +744,7 @@ hr {
   margin: 10px 0 6px;
 }
 .icd {
-  font-size: 10px;
+  font-size: 12px;
   color: #61767d;
 }
 .result-summary h2 {
@@ -812,7 +812,7 @@ hr {
   flex-wrap: wrap;
 }
 .hospital-code {
-  font-size: 10px;
+  font-size: 12px;
   letter-spacing: 1.2px;
   color: #517982;
 }
@@ -845,7 +845,7 @@ hr {
 }
 .hospital-distance > span {
   display: block;
-  font-size: 11px;
+  font-size: 12px;
   color: #546f77;
   margin-top: 3px;
 }
@@ -860,7 +860,7 @@ hr {
   font-weight: 550;
 }
 .source-caption {
-  font-size: 9px;
+  font-size: 12px;
   color: #62767d;
   display: block;
   margin-top: 16px;
@@ -938,7 +938,7 @@ hr {
   font-weight: 500;
 }
 .condition-toggle > span {
-  font-size: 11px;
+  font-size: 12px;
   white-space: nowrap;
   color: #58727a;
 }
@@ -952,7 +952,7 @@ hr {
   margin-bottom: 10px;
 }
 code {
-  font-size: 11px;
+  font-size: 12px;
   overflow-wrap: anywhere;
 }
 .skip-link {
@@ -997,7 +997,7 @@ code {
     font-size: 24px;
   }
   .brand small {
-    font-size: 8px;
+    font-size: 12px;
   }
   .sidebar nav a {
     font-size: 12px;
@@ -1092,7 +1092,7 @@ code {
     font-size: 25px;
   }
   .brand small {
-    font-size: 9px;
+    font-size: 12px;
   }
   .sidebar nav {
     flex-direction: row;
@@ -1117,7 +1117,7 @@ code {
     font-size: 12px;
   }
   .research-badge {
-    font-size: 10px;
+    font-size: 12px;
   }
   .metric-grid {
     grid-template-columns: 1fr 1fr;
@@ -1169,7 +1169,7 @@ code {
   }
   .sidebar nav a {
     padding: 8px;
-    font-size: 11px;
+    font-size: 12px;
   }
   .app-header {
     padding: 12px 16px;
@@ -1222,7 +1222,7 @@ code {
   }
   .image-caption {
     z-index: 3;
-    font-size: 8px;
+    font-size: 12px;
   }
   .hero-copy .button-row {
     gap: 8px;
@@ -1243,10 +1243,10 @@ code {
     font-size: 26px;
   }
   .metric > span {
-    font-size: 11px;
+    font-size: 12px;
   }
   .metric small {
-    font-size: 10px;
+    font-size: 12px;
   }
   .dashboard-bottom {
     grid-template-columns: 1fr;
@@ -1336,7 +1336,7 @@ code {
     gap: 8px;
   }
   .condition-toggle > span {
-    font-size: 10px;
+    font-size: 12px;
   }
   .condition-toggle strong {
     max-width: 65%;

@@ -105,11 +105,7 @@
                             }
                           }
                         },
-                        "required": [
-                          "name",
-                          "icd10",
-                          "symptoms"
-                        ],
+                        "required": ["name", "icd10", "symptoms"],
                         "additionalProperties": false
                       }
                     },
@@ -249,9 +245,7 @@
                       }
                     }
                   },
-                  "required": [
-                    "hospitals"
-                  ],
+                  "required": ["hospitals"],
                   "additionalProperties": false
                 }
               }
@@ -392,10 +386,7 @@
                         "maximum": 180
                       }
                     },
-                    "required": [
-                      "latitude",
-                      "longitude"
-                    ],
+                    "required": ["latitude", "longitude"],
                     "additionalProperties": false
                   },
                   "hospitalLimit": {
@@ -405,9 +396,7 @@
                     "maximum": 3
                   }
                 },
-                "required": [
-                  "symptoms"
-                ],
+                "required": ["symptoms"],
                 "additionalProperties": false
               }
             }
@@ -543,10 +532,7 @@
                     },
                     "evidenceLevel": {
                       "type": "string",
-                      "enum": [
-                        "limited",
-                        "expanded"
-                      ]
+                      "enum": ["limited", "expanded"]
                     },
                     "createdAt": {
                       "type": "string"
