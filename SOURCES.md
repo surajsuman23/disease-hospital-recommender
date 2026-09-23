@@ -1,21 +1,14 @@
 # Sources and data provenance
 
-## Data created for this repository
+- The symptom dataset is generated in `ml/src/disease_model/core.py`: all 256 binary combinations with an arbitrary modulo-three label rule. It contains no patient records or clinically meaningful disease labels.
+- Facility names and records in `ml/data/fictional_hospitals.csv` are fictional. Coordinates are demonstration points around Bengaluru.
+- scikit-learn BernoulliNB: https://scikit-learn.org/stable/modules/generated/sklearn.naive_bayes.BernoulliNB.html
+- scikit-learn cross-validation: https://scikit-learn.org/stable/modules/cross_validation.html
+- Great-circle distance method: https://www.movable-type.co.uk/scripts/latlong.html
+- Hono framework and Cloudflare adapter: https://hono.dev/docs/getting-started/cloudflare-workers
+- Cloudflare Worker static asset binding: https://developers.cloudflare.com/workers/static-assets/binding/
+- React: https://react.dev/
+- Vite: https://vite.dev/
+- Zod: https://zod.dev/
 
-- `synthetic_data()` generates 256 binary patterns and fictional labels using a documented deterministic rule. No patient records or third-party symptom dataset are included.
-- `fictional_hospitals.csv` contains four invented institutions and illustrative coordinates. It is not scraped from a hospital directory.
-
-## Method references
-
-- [scikit-learn KNeighborsClassifier](https://scikit-learn.org/stable/modules/generated/sklearn.neighbors.KNeighborsClassifier.html)
-- [scikit-learn BernoulliNB](https://scikit-learn.org/stable/modules/generated/sklearn.naive_bayes.BernoulliNB.html)
-- [scikit-learn cross-validation guide](https://scikit-learn.org/stable/modules/cross_validation.html)
-- [scikit-learn Haversine distances](https://scikit-learn.org/stable/modules/generated/sklearn.metrics.pairwise.haversine_distances.html): mathematical reference; the repository implements the scalar formula using Python's standard `math` module and a mean Earth radius of 6371.0088 km.
-
-Accessed 2026-09-22. No third-party implementation was copied.
-
-## Browser interface references
-
-- Pyodide 0.27.5 runtime and package documentation: https://pyodide.org/en/0.27.5/usage/quickstart.html
-- Pyodide scientific package versions: https://pyodide.org/en/0.27.5/usage/packages-in-pyodide.html
-- Web Workers: https://developer.mozilla.org/en-US/docs/Web/API/Web_Workers_API
+The serving implementation evaluates the exported BernoulliNB parameters; it does not call a language-model API or load a browser Python runtime. The scientific model's limitations remain documented in the model card.

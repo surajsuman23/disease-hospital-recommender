@@ -1,0 +1,9 @@
+.git
+node_modules
+dist
+.env
+.env.*
+.venv
+**/__pycache__
+**/*.egg-info
+coverage

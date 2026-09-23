@@ -1,72 +1,94 @@
-# Disease Prediction and Hospital Recommendation System
+# Disease Prediction & Hospital Ranking
 
-**[Open interactive demo](https://suraj-suman-projects.m16labs-0951.chatgpt.site/hospital.html)**
+**[Open the standalone application](https://suraj-disease-prediction.m16labs-0951.chatgpt.site)**
 
+A standalone full-stack portfolio project for exploring symptom classification and hospital distance ranking. The React interface calls a versioned backend API; a separate Python pipeline trains and exports the model. This repository is independent of the diabetes benchmark and CPU scheduling projects.
 
-An educational **synthetic demonstration** of symptom classification followed by geographic ranking of fictional hospitals. It compares KNN and Bernoulli Naive Bayes and demonstrates input validation, model evaluation and distance-based ranking.
+**Educational demo only:** the data is synthetic, condition labels are arbitrary, and all facilities are fictional. The model is not a diagnostic tool and must not guide treatment or real hospital selection. The measured model accuracy is low; this is an engineering demonstration, not a clinically validated product.
 
-**The bundled demo does not identify real diseases or recommend real hospitals.** It uses fictional labels and hospital records to demonstrate the workflow without using patient records.
+## Repository structure
 
-## Implementation
+```text
+apps/
+  frontend/          React + TypeScript interface, API client, responsive styles
+  backend/src/       Hono API, inference, geographic ranking, Node/Worker adapters
+packages/contracts/  Shared Zod validation schemas and TypeScript contracts
+ml/
+  src/disease_model/ Python training and CLI implementation
+  data/              Fictional facility data
+  artifacts/         Versioned model parameters and evaluation metadata
+  tests/             Python validation and ranking tests
+  export_model.py    Reproducible training and JSON export
+scripts/             Production build tooling
+tests/               API, frontend, model parity tests and fixtures
+docs/                Architecture, OpenAPI, operations and model documentation
+.github/             CI and dependency update configuration
+Dockerfile           Non-root production Node image
+compose.yaml         Local container deployment
+```
 
-This repository includes the command-line implementation, an interactive browser demo, tests and documentation. Reported results apply to the documented implementation and runtime. References and data sources are listed in `SOURCES.md`.
+## Run locally
 
-## Setup
+Requires Node 20.19+ (Node 22 recommended). Python is needed only for model training or the original CLI.
 
-Requires Python 3.11 or newer. Run these commands from this project folder:
+```sh
+npm ci
+npm run dev
+```
+
+Open http://127.0.0.1:8201. The frontend development server proxies `/api` to the API on port 8200. Use **Use example**, then **Run demonstration**. Hospital ranking can be toggled independently.
+
+For the production build:
+
+```sh
+npm run check
+npm start
+```
+
+Open http://127.0.0.1:8200. The Node server serves both the built frontend and API under one origin. The API itself is isolated under `apps/backend/` and can also run as a Cloudflare Worker. See [deployment and operations](docs/DEPLOYMENT.md).
+
+Optional settings: copy `.env.example` to `.env` for the Node adapter. Never commit real environment files. No database, credentials or API keys are needed for this stateless demo.
+
+## API
+
+- `GET /api/health/live` — process liveness.
+- `GET /api/health/ready` — model readiness and version.
+- `GET /api/v1/model` — supported symptoms, evaluation and privacy details.
+- `POST /api/v1/predictions` — classification and optional hospital ranking.
+- `GET /api/v1/openapi.json` — machine-readable API contract.
+
+```sh
+curl http://127.0.0.1:8200/api/v1/predictions \
+  -H 'Content-Type: application/json' \
+  -d '{"symptoms":["fever","cough"],"location":{"latitude":12.97,"longitude":77.59}}'
+```
+
+Requests reject unknown symptoms, duplicates, invalid coordinates and unknown fields. Request bodies are limited to 4 KB. Responses include a request ID, model version and explicit demo status. Application request logs exclude payloads, symptoms, coordinates and IP addresses; no prediction records are persisted. Hosting-provider access logs are outside this application's control.
+
+## Model pipeline
 
 ```sh
 python3 -m venv .venv
 source .venv/bin/activate
-python -m pip install -r requirements.txt
+pip install -r ml/requirements-lock.txt
+PYTHONPATH=ml/src python -m unittest discover -s ml/tests -v
+python ml/export_model.py
+npm test
 ```
 
-On Windows, activate with `.venv\Scripts\activate` instead.
+The original KNN/BernoulliNB comparison selects a model using training cross-validation. A deterministic JSON artifact exports the selected BernoulliNB parameters. The backend performs the same log-probability calculation and is tested against scikit-learn on all 256 binary symptom patterns. Retraining is an explicit build operation; the public API never trains on visitor inputs.
 
-## Run the complete demo
+The CLI is retained:
 
 ```sh
-python recommender.py --symptoms fever,cough --latitude 12.97 --longitude 77.59
-python -m unittest discover -v
+PYTHONPATH=ml/src python -m disease_model.core \
+  --symptoms fever,cough --latitude 12.97 --longitude 77.59 --output reports
 ```
 
-The coordinates above are demonstration inputs, not a user's location. The program works offline after dependency installation.
+See the [model card](docs/MODEL_CARD.md) for data provenance, measured scores and limitations, and [SOURCES.md](SOURCES.md) for references.
 
-Recognized symptom names: `fever`, `cough`, `fatigue`, `headache`, `nausea`, `rash`, `sneezing`, `body_ache`. Unknown names and empty symptom selections are rejected.
+## Validation and readiness
 
-## How it works
+`npm run check` type-checks, runs the API/frontend/parity tests and creates production bundles. GitHub Actions checks application and Python model changes. `npm run format:check` checks formatting.
 
-- Generate all 256 unique binary combinations of eight symptom flags. Assign `demo_condition_a`, `demo_condition_b`, and `demo_condition_c` using an arbitrary mathematical rule. This rule contains **no medical knowledge**.
-- Split the synthetic data into stratified training and test sets. Compare KNN and Bernoulli Naive Bayes using three-fold training CV macro F1; evaluate the selected configurations on the holdout.
-- Classify the demonstration input, filter fictional hospital records by supported demo label, then sort by Haversine distance.
-- Write `reports/demo_result.json` and `reports/synthetic_symptoms.csv`.
-
-Metrics only describe this artificial classification task. Low scores reflect that arbitrary labels can be difficult for these models; they must not be described as clinical accuracy. Hospital distances are straight-line distances, not driving times, availability, quality scores, or verified capabilities.
-
-## Data contract
-
-The reusable functions `validate_symptoms`, `fit_models`, `classify`, and `rank_hospitals` accept pandas data frames. The CLI deliberately uses the synthetic demo only.
-
-Symptom data needs the eight binary columns above plus `condition`. The validator rejects missing flags, inconsistent labels for an identical pattern, and classes with too few examples.
-
-Hospital data needs `name,latitude,longitude,conditions`; semicolons separate supported labels and `all` matches every label. The checked-in file is entirely fictional. Coordinates are illustrative and do not identify the named facilities because those facilities do not exist.
-
-## What is needed for a real research extension
-
-A suitably licensed, documented dataset; an independently verified hospital directory; a justified clinical label-to-specialty mapping; external validation; and domain expert review. These are not supplied or claimed here. Do not use this demo to decide where or whether to seek medical care.
-
-## Browser interface
-
-The `docs/` folder contains a standalone browser interface. To run it locally from the repository root:
-
-```sh
-python3 -m http.server 8080 --directory docs
-```
-
-Open http://localhost:8080. Serve these files over HTTP or HTTPS; opening `index.html` directly as a file does not support the worker and module imports.
-
-The interface loads Python through Pyodide 0.27.5 in a dedicated Web Worker and executes the project's original Python module. The first run downloads Python and scientific packages from the jsDelivr CDN, so it needs an internet connection and may take a minute. Later runs reuse the loaded runtime while the page remains open. Inputs and calculations stay in the browser; there is no application account or server-side input storage.
-
-The browser runtime uses scikit-learn 1.6.1, pandas 2.2.3 and NumPy 2.0.2. These differ from the original desktop benchmark environment; exported result JSON records the actual runtime versions. Results should always be quoted with their runtime and split configuration.
-
-The public demo is hosted independently of this computer. The project can also be served from the `docs/` directory on a static host.
+This is deployable portfolio software, not a claim of “90% production ready.” [The readiness checklist](docs/PRODUCTION_READINESS.md) distinguishes implemented safeguards, verified checks and remaining launch gates. Clinical validation, independent security review, distributed abuse controls, sustained load testing and operational ownership are not implied by a successful build.

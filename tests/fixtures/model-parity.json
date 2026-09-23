@@ -1,0 +1,1908 @@
+[
+  {
+    "symptoms": [],
+    "label": "demo_condition_a",
+    "probabilities": [
+      0.42907763634060486, 0.22217606695508318, 0.34874629670431234
+    ]
+  },
+  {
+    "symptoms": ["body_ache"],
+    "label": "demo_condition_a",
+    "probabilities": [
+      0.42907763634060486, 0.22217606695508318, 0.34874629670431234
+    ]
+  },
+  {
+    "symptoms": ["sneezing"],
+    "label": "demo_condition_a",
+    "probabilities": [
+      0.3835150921777965, 0.3047709968668251, 0.31171391095537837
+    ]
+  },
+  {
+    "symptoms": ["sneezing", "body_ache"],
+    "label": "demo_condition_a",
+    "probabilities": [
+      0.3835150921777965, 0.3047709968668251, 0.31171391095537837
+    ]
+  },
+  {
+    "symptoms": ["rash"],
+    "label": "demo_condition_a",
+    "probabilities": [
+      0.3794986176803633, 0.2504864825636623, 0.3700148997559747
+    ]
+  },
+  {
+    "symptoms": ["rash", "body_ache"],
+    "label": "demo_condition_a",
+    "probabilities": [
+      0.3794986176803633, 0.2504864825636623, 0.37001489975597435
+    ]
+  },
+  {
+    "symptoms": ["rash", "sneezing"],
+    "label": "demo_condition_b",
+    "probabilities": [
+      0.33467236999073036, 0.3390187644061943, 0.3263088656030751
+    ]
+  },
+  {
+    "symptoms": ["rash", "sneezing", "body_ache"],
+    "label": "demo_condition_b",
+    "probabilities": [
+      0.33467236999073036, 0.3390187644061943, 0.3263088656030751
+    ]
+  },
+  {
+    "symptoms": ["nausea"],
+    "label": "demo_condition_a",
+    "probabilities": [
+      0.4024581413665955, 0.24998698651119877, 0.34755487212220537
+    ]
+  },
+  {
+    "symptoms": ["nausea", "body_ache"],
+    "label": "demo_condition_a",
+    "probabilities": [
+      0.4024581413665955, 0.24998698651119877, 0.34755487212220537
+    ]
+  },
+  {
+    "symptoms": ["nausea", "sneezing"],
+    "label": "demo_condition_a",
+    "probabilities": [
+      0.35500354109681137, 0.33842243878305955, 0.3065740201201292
+    ]
+  },
+  {
+    "symptoms": ["nausea", "sneezing", "body_ache"],
+    "label": "demo_condition_a",
+    "probabilities": [
+      0.35500354109681137, 0.33842243878305955, 0.3065740201201289
+    ]
+  },
+  {
+    "symptoms": ["nausea", "rash"],
+    "label": "demo_condition_c",
+    "probabilities": [
+      0.35363969619875957, 0.2800079705972581, 0.36635233320398203
+    ]
+  },
+  {
+    "symptoms": ["nausea", "rash", "body_ache"],
+    "label": "demo_condition_c",
+    "probabilities": [
+      0.35363969619875957, 0.2800079705972581, 0.36635233320398203
+    ]
+  },
+  {
+    "symptoms": ["nausea", "rash", "sneezing"],
+    "label": "demo_condition_b",
+    "probabilities": [
+      0.30758593546788543, 0.373771032285938, 0.3186430322461761
+    ]
+  },
+  {
+    "symptoms": ["nausea", "rash", "sneezing", "body_ache"],
+    "label": "demo_condition_b",
+    "probabilities": [
+      0.30758593546788543, 0.37377103228593833, 0.3186430322461764
+    ]
+  },
+  {
+    "symptoms": ["headache"],
+    "label": "demo_condition_a",
+    "probabilities": [
+      0.42907763634060486, 0.22217606695508318, 0.34874629670431234
+    ]
+  },
+  {
+    "symptoms": ["headache", "body_ache"],
+    "label": "demo_condition_a",
+    "probabilities": [
+      0.42907763634060486, 0.22217606695508318, 0.34874629670431234
+    ]
+  },
+  {
+    "symptoms": ["headache", "sneezing"],
+    "label": "demo_condition_a",
+    "probabilities": [
+      0.3835150921777965, 0.3047709968668251, 0.31171391095537837
+    ]
+  },
+  {
+    "symptoms": ["headache", "sneezing", "body_ache"],
+    "label": "demo_condition_a",
+    "probabilities": [
+      0.3835150921777965, 0.3047709968668251, 0.31171391095537837
+    ]
+  },
+  {
+    "symptoms": ["headache", "rash"],
+    "label": "demo_condition_a",
+    "probabilities": [
+      0.3794986176803633, 0.2504864825636623, 0.37001489975597435
+    ]
+  },
+  {
+    "symptoms": ["headache", "rash", "body_ache"],
+    "label": "demo_condition_a",
+    "probabilities": [
+      0.3794986176803633, 0.2504864825636623, 0.37001489975597435
+    ]
+  },
+  {
+    "symptoms": ["headache", "rash", "sneezing"],
+    "label": "demo_condition_b",
+    "probabilities": [
+      0.33467236999073036, 0.3390187644061943, 0.3263088656030751
+    ]
+  },
+  {
+    "symptoms": ["headache", "rash", "sneezing", "body_ache"],
+    "label": "demo_condition_b",
+    "probabilities": [
+      0.33467236999073036, 0.3390187644061946, 0.32630886560307537
+    ]
+  },
+  {
+    "symptoms": ["headache", "nausea"],
+    "label": "demo_condition_a",
+    "probabilities": [0.4024581413665955, 0.249986986511199, 0.3475548721222057]
+  },
+  {
+    "symptoms": ["headache", "nausea", "body_ache"],
+    "label": "demo_condition_a",
+    "probabilities": [
+      0.4024581413665955, 0.249986986511199, 0.34755487212220537
+    ]
+  },
+  {
+    "symptoms": ["headache", "nausea", "sneezing"],
+    "label": "demo_condition_a",
+    "probabilities": [
+      0.35500354109681137, 0.33842243878305955, 0.3065740201201289
+    ]
+  },
+  {
+    "symptoms": ["headache", "nausea", "sneezing", "body_ache"],
+    "label": "demo_condition_a",
+    "probabilities": [
+      0.35500354109681137, 0.33842243878305955, 0.3065740201201289
+    ]
+  },
+  {
+    "symptoms": ["headache", "nausea", "rash"],
+    "label": "demo_condition_c",
+    "probabilities": [
+      0.35363969619875957, 0.2800079705972581, 0.36635233320398203
+    ]
+  },
+  {
+    "symptoms": ["headache", "nausea", "rash", "body_ache"],
+    "label": "demo_condition_c",
+    "probabilities": [
+      0.35363969619875957, 0.28000797059725835, 0.36635233320398236
+    ]
+  },
+  {
+    "symptoms": ["headache", "nausea", "rash", "sneezing"],
+    "label": "demo_condition_b",
+    "probabilities": [
+      0.30758593546788543, 0.37377103228593833, 0.3186430322461764
+    ]
+  },
+  {
+    "symptoms": ["headache", "nausea", "rash", "sneezing", "body_ache"],
+    "label": "demo_condition_b",
+    "probabilities": [
+      0.30758593546788543, 0.37377103228593833, 0.3186430322461764
+    ]
+  },
+  {
+    "symptoms": ["fatigue"],
+    "label": "demo_condition_a",
+    "probabilities": [
+      0.40520618029746497, 0.22295379413292207, 0.3718400255696131
+    ]
+  },
+  {
+    "symptoms": ["fatigue", "body_ache"],
+    "label": "demo_condition_a",
+    "probabilities": [
+      0.40520618029746497, 0.22295379413292207, 0.3718400255696131
+    ]
+  },
+  {
+    "symptoms": ["fatigue", "sneezing"],
+    "label": "demo_condition_a",
+    "probabilities": [
+      0.3620439040607678, 0.3057242073622827, 0.3322318885769489
+    ]
+  },
+  {
+    "symptoms": ["fatigue", "sneezing", "body_ache"],
+    "label": "demo_condition_a",
+    "probabilities": [
+      0.36204390406076814, 0.30572420736228295, 0.3322318885769489
+    ]
+  },
+  {
+    "symptoms": ["fatigue", "rash"],
+    "label": "demo_condition_c",
+    "probabilities": [
+      0.3568631553604241, 0.25029560217265023, 0.3928412424669258
+    ]
+  },
+  {
+    "symptoms": ["fatigue", "rash", "body_ache"],
+    "label": "demo_condition_c",
+    "probabilities": [
+      0.3568631553604238, 0.25029560217265023, 0.3928412424669258
+    ]
+  },
+  {
+    "symptoms": ["fatigue", "rash", "sneezing"],
+    "label": "demo_condition_c",
+    "probabilities": [
+      0.3147389309861632, 0.3387909141545038, 0.3464701548593333
+    ]
+  },
+  {
+    "symptoms": ["fatigue", "rash", "sneezing", "body_ache"],
+    "label": "demo_condition_c",
+    "probabilities": [
+      0.3147389309861632, 0.3387909141545038, 0.3464701548593333
+    ]
+  },
+  {
+    "symptoms": ["fatigue", "nausea"],
+    "label": "demo_condition_a",
+    "probabilities": [
+      0.3794986176803633, 0.2504864825636623, 0.37001489975597435
+    ]
+  },
+  {
+    "symptoms": ["fatigue", "nausea", "body_ache"],
+    "label": "demo_condition_a",
+    "probabilities": [
+      0.3794986176803633, 0.2504864825636623, 0.37001489975597435
+    ]
+  },
+  {
+    "symptoms": ["fatigue", "nausea", "sneezing"],
+    "label": "demo_condition_b",
+    "probabilities": [
+      0.33467236999073063, 0.3390187644061946, 0.3263088656030751
+    ]
+  },
+  {
+    "symptoms": ["fatigue", "nausea", "sneezing", "body_ache"],
+    "label": "demo_condition_b",
+    "probabilities": [
+      0.33467236999073036, 0.3390187644061946, 0.3263088656030751
+    ]
+  },
+  {
+    "symptoms": ["fatigue", "nausea", "rash"],
+    "label": "demo_condition_c",
+    "probabilities": [
+      0.3321168707775448, 0.2794330263237646, 0.38845010289869053
+    ]
+  },
+  {
+    "symptoms": ["fatigue", "nausea", "rash", "body_ache"],
+    "label": "demo_condition_c",
+    "probabilities": [
+      0.3321168707775448, 0.2794330263237646, 0.38845010289869053
+    ]
+  },
+  {
+    "symptoms": ["fatigue", "nausea", "rash", "sneezing"],
+    "label": "demo_condition_b",
+    "probabilities": [
+      0.2889432458291159, 0.3731033303913943, 0.33795342377948995
+    ]
+  },
+  {
+    "symptoms": ["fatigue", "nausea", "rash", "sneezing", "body_ache"],
+    "label": "demo_condition_b",
+    "probabilities": [
+      0.2889432458291159, 0.3731033303913943, 0.33795342377948995
+    ]
+  },
+  {
+    "symptoms": ["fatigue", "headache"],
+    "label": "demo_condition_a",
+    "probabilities": [
+      0.40520618029746497, 0.22295379413292185, 0.3718400255696131
+    ]
+  },
+  {
+    "symptoms": ["fatigue", "headache", "body_ache"],
+    "label": "demo_condition_a",
+    "probabilities": [
+      0.40520618029746497, 0.22295379413292185, 0.37184002556961276
+    ]
+  },
+  {
+    "symptoms": ["fatigue", "headache", "sneezing"],
+    "label": "demo_condition_a",
+    "probabilities": [
+      0.36204390406076814, 0.30572420736228295, 0.3322318885769489
+    ]
+  },
+  {
+    "symptoms": ["fatigue", "headache", "sneezing", "body_ache"],
+    "label": "demo_condition_a",
+    "probabilities": [
+      0.3620439040607678, 0.30572420736228295, 0.3322318885769489
+    ]
+  },
+  {
+    "symptoms": ["fatigue", "headache", "rash"],
+    "label": "demo_condition_c",
+    "probabilities": [0.3568631553604238, 0.25029560217265, 0.3928412424669258]
+  },
+  {
+    "symptoms": ["fatigue", "headache", "rash", "body_ache"],
+    "label": "demo_condition_c",
+    "probabilities": [0.3568631553604238, 0.25029560217265, 0.3928412424669258]
+  },
+  {
+    "symptoms": ["fatigue", "headache", "rash", "sneezing"],
+    "label": "demo_condition_c",
+    "probabilities": [
+      0.3147389309861632, 0.3387909141545035, 0.3464701548593333
+    ]
+  },
+  {
+    "symptoms": ["fatigue", "headache", "rash", "sneezing", "body_ache"],
+    "label": "demo_condition_c",
+    "probabilities": [
+      0.3147389309861632, 0.3387909141545035, 0.3464701548593333
+    ]
+  },
+  {
+    "symptoms": ["fatigue", "headache", "nausea"],
+    "label": "demo_condition_a",
+    "probabilities": [
+      0.37949861768036364, 0.2504864825636623, 0.37001489975597435
+    ]
+  },
+  {
+    "symptoms": ["fatigue", "headache", "nausea", "body_ache"],
+    "label": "demo_condition_a",
+    "probabilities": [
+      0.3794986176803633, 0.2504864825636623, 0.37001489975597435
+    ]
+  },
+  {
+    "symptoms": ["fatigue", "headache", "nausea", "sneezing"],
+    "label": "demo_condition_b",
+    "probabilities": [
+      0.33467236999073036, 0.3390187644061943, 0.3263088656030751
+    ]
+  },
+  {
+    "symptoms": ["fatigue", "headache", "nausea", "sneezing", "body_ache"],
+    "label": "demo_condition_b",
+    "probabilities": [
+      0.33467236999073036, 0.3390187644061943, 0.3263088656030751
+    ]
+  },
+  {
+    "symptoms": ["fatigue", "headache", "nausea", "rash"],
+    "label": "demo_condition_c",
+    "probabilities": [
+      0.3321168707775448, 0.2794330263237644, 0.38845010289869053
+    ]
+  },
+  {
+    "symptoms": ["fatigue", "headache", "nausea", "rash", "body_ache"],
+    "label": "demo_condition_c",
+    "probabilities": [
+      0.3321168707775448, 0.2794330263237644, 0.38845010289869053
+    ]
+  },
+  {
+    "symptoms": ["fatigue", "headache", "nausea", "rash", "sneezing"],
+    "label": "demo_condition_b",
+    "probabilities": [
+      0.2889432458291159, 0.3731033303913943, 0.3379534237794902
+    ]
+  },
+  {
+    "symptoms": [
+      "fatigue",
+      "headache",
+      "nausea",
+      "rash",
+      "sneezing",
+      "body_ache"
+    ],
+    "label": "demo_condition_b",
+    "probabilities": [
+      0.2889432458291157, 0.373103330391394, 0.33795342377948995
+    ]
+  },
+  {
+    "symptoms": ["cough"],
+    "label": "demo_condition_a",
+    "probabilities": [
+      0.4232010645867861, 0.23282900658008696, 0.3439699288331269
+    ]
+  },
+  {
+    "symptoms": ["cough", "body_ache"],
+    "label": "demo_condition_a",
+    "probabilities": [
+      0.4232010645867861, 0.23282900658008673, 0.3439699288331269
+    ]
+  },
+  {
+    "symptoms": ["cough", "sneezing"],
+    "label": "demo_condition_a",
+    "probabilities": [
+      0.3763463759180611, 0.31776631194216987, 0.30588731213976883
+    ]
+  },
+  {
+    "symptoms": ["cough", "sneezing", "body_ache"],
+    "label": "demo_condition_a",
+    "probabilities": [
+      0.3763463759180611, 0.31776631194216987, 0.30588731213976883
+    ]
+  },
+  {
+    "symptoms": ["cough", "rash"],
+    "label": "demo_condition_a",
+    "probabilities": [
+      0.37364899133332924, 0.2620395523636337, 0.36431145630303735
+    ]
+  },
+  {
+    "symptoms": ["cough", "rash", "body_ache"],
+    "label": "demo_condition_a",
+    "probabilities": [
+      0.37364899133332924, 0.2620395523636337, 0.36431145630303735
+    ]
+  },
+  {
+    "symptoms": ["cough", "rash", "sneezing"],
+    "label": "demo_condition_b",
+    "probabilities": [
+      0.3277282434803724, 0.3527334828368295, 0.31953827368279825
+    ]
+  },
+  {
+    "symptoms": ["cough", "rash", "sneezing", "body_ache"],
+    "label": "demo_condition_b",
+    "probabilities": [
+      0.3277282434803724, 0.35273348283682915, 0.31953827368279825
+    ]
+  },
+  {
+    "symptoms": ["cough", "nausea"],
+    "label": "demo_condition_a",
+    "probabilities": [
+      0.3962667949956326, 0.2615250568642327, 0.34220814814013484
+    ]
+  },
+  {
+    "symptoms": ["cough", "nausea", "body_ache"],
+    "label": "demo_condition_a",
+    "probabilities": [
+      0.3962667949956322, 0.2615250568642327, 0.34220814814013484
+    ]
+  },
+  {
+    "symptoms": ["cough", "nausea", "sneezing"],
+    "label": "demo_condition_b",
+    "probabilities": [
+      0.34765025074061273, 0.3521258849113547, 0.3002238643480331
+    ]
+  },
+  {
+    "symptoms": ["cough", "nausea", "sneezing", "body_ache"],
+    "label": "demo_condition_b",
+    "probabilities": [
+      0.34765025074061273, 0.3521258849113544, 0.3002238643480331
+    ]
+  },
+  {
+    "symptoms": ["cough", "nausea", "rash"],
+    "label": "demo_condition_c",
+    "probabilities": [
+      0.34755727081947935, 0.29239147233530244, 0.3600512568452182
+    ]
+  },
+  {
+    "symptoms": ["cough", "nausea", "rash", "body_ache"],
+    "label": "demo_condition_c",
+    "probabilities": [
+      0.34755727081947935, 0.29239147233530244, 0.3600512568452182
+    ]
+  },
+  {
+    "symptoms": ["cough", "nausea", "rash", "sneezing"],
+    "label": "demo_condition_b",
+    "probabilities": [
+      0.3005645405558778, 0.3880662271587816, 0.31136923228534047
+    ]
+  },
+  {
+    "symptoms": ["cough", "nausea", "rash", "sneezing", "body_ache"],
+    "label": "demo_condition_b",
+    "probabilities": [
+      0.3005645405558778, 0.3880662271587816, 0.31136923228534047
+    ]
+  },
+  {
+    "symptoms": ["cough", "headache"],
+    "label": "demo_condition_a",
+    "probabilities": [
+      0.4232010645867861, 0.23282900658008673, 0.3439699288331269
+    ]
+  },
+  {
+    "symptoms": ["cough", "headache", "body_ache"],
+    "label": "demo_condition_a",
+    "probabilities": [
+      0.4232010645867861, 0.23282900658008696, 0.3439699288331269
+    ]
+  },
+  {
+    "symptoms": ["cough", "headache", "sneezing"],
+    "label": "demo_condition_a",
+    "probabilities": [
+      0.3763463759180611, 0.31776631194216987, 0.30588731213976883
+    ]
+  },
+  {
+    "symptoms": ["cough", "headache", "sneezing", "body_ache"],
+    "label": "demo_condition_a",
+    "probabilities": [
+      0.3763463759180611, 0.31776631194216987, 0.30588731213976883
+    ]
+  },
+  {
+    "symptoms": ["cough", "headache", "rash"],
+    "label": "demo_condition_a",
+    "probabilities": [
+      0.37364899133332924, 0.26203955236363347, 0.36431145630303735
+    ]
+  },
+  {
+    "symptoms": ["cough", "headache", "rash", "body_ache"],
+    "label": "demo_condition_a",
+    "probabilities": [
+      0.37364899133332924, 0.26203955236363347, 0.36431145630303735
+    ]
+  },
+  {
+    "symptoms": ["cough", "headache", "rash", "sneezing"],
+    "label": "demo_condition_b",
+    "probabilities": [
+      0.3277282434803724, 0.3527334828368295, 0.3195382736827985
+    ]
+  },
+  {
+    "symptoms": ["cough", "headache", "rash", "sneezing", "body_ache"],
+    "label": "demo_condition_b",
+    "probabilities": [
+      0.3277282434803721, 0.35273348283682915, 0.31953827368279825
+    ]
+  },
+  {
+    "symptoms": ["cough", "headache", "nausea"],
+    "label": "demo_condition_a",
+    "probabilities": [
+      0.3962667949956326, 0.2615250568642327, 0.34220814814013484
+    ]
+  },
+  {
+    "symptoms": ["cough", "headache", "nausea", "body_ache"],
+    "label": "demo_condition_a",
+    "probabilities": [
+      0.3962667949956326, 0.2615250568642327, 0.34220814814013484
+    ]
+  },
+  {
+    "symptoms": ["cough", "headache", "nausea", "sneezing"],
+    "label": "demo_condition_b",
+    "probabilities": [
+      0.34765025074061273, 0.3521258849113544, 0.3002238643480331
+    ]
+  },
+  {
+    "symptoms": ["cough", "headache", "nausea", "sneezing", "body_ache"],
+    "label": "demo_condition_b",
+    "probabilities": [
+      0.34765025074061273, 0.3521258849113544, 0.3002238643480331
+    ]
+  },
+  {
+    "symptoms": ["cough", "headache", "nausea", "rash"],
+    "label": "demo_condition_c",
+    "probabilities": [
+      0.34755727081947907, 0.29239147233530244, 0.3600512568452182
+    ]
+  },
+  {
+    "symptoms": ["cough", "headache", "nausea", "rash", "body_ache"],
+    "label": "demo_condition_c",
+    "probabilities": [
+      0.34755727081947935, 0.29239147233530244, 0.3600512568452185
+    ]
+  },
+  {
+    "symptoms": ["cough", "headache", "nausea", "rash", "sneezing"],
+    "label": "demo_condition_b",
+    "probabilities": [
+      0.30056454055587806, 0.3880662271587816, 0.31136923228534075
+    ]
+  },
+  {
+    "symptoms": [
+      "cough",
+      "headache",
+      "nausea",
+      "rash",
+      "sneezing",
+      "body_ache"
+    ],
+    "label": "demo_condition_b",
+    "probabilities": [
+      0.3005645405558778, 0.3880662271587812, 0.31136923228534047
+    ]
+  },
+  {
+    "symptoms": ["cough", "fatigue"],
+    "label": "demo_condition_a",
+    "probabilities": [0.39963738829757, 0.2336328234892966, 0.3667297882131328]
+  },
+  {
+    "symptoms": ["cough", "fatigue", "body_ache"],
+    "label": "demo_condition_a",
+    "probabilities": [
+      0.3996373882975704, 0.23363282348929681, 0.3667297882131331
+    ]
+  },
+  {
+    "symptoms": ["cough", "fatigue", "sneezing"],
+    "label": "demo_condition_a",
+    "probabilities": [
+      0.35525576118580454, 0.31874153267060323, 0.32600270614359195
+    ]
+  },
+  {
+    "symptoms": ["cough", "fatigue", "sneezing", "body_ache"],
+    "label": "demo_condition_a",
+    "probabilities": [
+      0.35525576118580454, 0.31874153267060323, 0.32600270614359195
+    ]
+  },
+  {
+    "symptoms": ["cough", "fatigue", "rash"],
+    "label": "demo_condition_c",
+    "probabilities": [
+      0.35136656129525323, 0.26184294372873806, 0.3867904949760084
+    ]
+  },
+  {
+    "symptoms": ["cough", "fatigue", "rash", "body_ache"],
+    "label": "demo_condition_c",
+    "probabilities": [
+      0.35136656129525323, 0.26184294372873806, 0.3867904949760084
+    ]
+  },
+  {
+    "symptoms": ["cough", "fatigue", "rash", "sneezing"],
+    "label": "demo_condition_b",
+    "probabilities": [
+      0.3082127020436997, 0.35250133078311696, 0.33928596717318343
+    ]
+  },
+  {
+    "symptoms": ["cough", "fatigue", "rash", "sneezing", "body_ache"],
+    "label": "demo_condition_b",
+    "probabilities": [
+      0.3082127020436997, 0.35250133078311696, 0.33928596717318343
+    ]
+  },
+  {
+    "symptoms": ["cough", "fatigue", "nausea"],
+    "label": "demo_condition_a",
+    "probabilities": [
+      0.37364899133332924, 0.26203955236363347, 0.36431145630303735
+    ]
+  },
+  {
+    "symptoms": ["cough", "fatigue", "nausea", "body_ache"],
+    "label": "demo_condition_a",
+    "probabilities": [
+      0.37364899133332924, 0.26203955236363347, 0.364311456303037
+    ]
+  },
+  {
+    "symptoms": ["cough", "fatigue", "nausea", "sneezing"],
+    "label": "demo_condition_b",
+    "probabilities": [
+      0.3277282434803724, 0.3527334828368295, 0.31953827368279825
+    ]
+  },
+  {
+    "symptoms": ["cough", "fatigue", "nausea", "sneezing", "body_ache"],
+    "label": "demo_condition_b",
+    "probabilities": [
+      0.3277282434803724, 0.3527334828368295, 0.31953827368279825
+    ]
+  },
+  {
+    "symptoms": ["cough", "fatigue", "nausea", "rash"],
+    "label": "demo_condition_c",
+    "probabilities": [
+      0.32641615490221415, 0.2918014060945913, 0.381782439003195
+    ]
+  },
+  {
+    "symptoms": ["cough", "fatigue", "nausea", "rash", "body_ache"],
+    "label": "demo_condition_c",
+    "probabilities": [
+      0.32641615490221415, 0.29180140609459104, 0.381782439003195
+    ]
+  },
+  {
+    "symptoms": ["cough", "fatigue", "nausea", "rash", "sneezing"],
+    "label": "demo_condition_b",
+    "probabilities": [
+      0.282358929762849, 0.38738878566046875, 0.3302522845766819
+    ]
+  },
+  {
+    "symptoms": ["cough", "fatigue", "nausea", "rash", "sneezing", "body_ache"],
+    "label": "demo_condition_b",
+    "probabilities": [
+      0.282358929762849, 0.3873887856604691, 0.33025228457668215
+    ]
+  },
+  {
+    "symptoms": ["cough", "fatigue", "headache"],
+    "label": "demo_condition_a",
+    "probabilities": [
+      0.3996373882975704, 0.23363282348929681, 0.3667297882131328
+    ]
+  },
+  {
+    "symptoms": ["cough", "fatigue", "headache", "body_ache"],
+    "label": "demo_condition_a",
+    "probabilities": [
+      0.3996373882975704, 0.23363282348929681, 0.3667297882131328
+    ]
+  },
+  {
+    "symptoms": ["cough", "fatigue", "headache", "sneezing"],
+    "label": "demo_condition_a",
+    "probabilities": [
+      0.35525576118580454, 0.3187415326706035, 0.3260027061435922
+    ]
+  },
+  {
+    "symptoms": ["cough", "fatigue", "headache", "sneezing", "body_ache"],
+    "label": "demo_condition_a",
+    "probabilities": [
+      0.35525576118580454, 0.3187415326706035, 0.3260027061435922
+    ]
+  },
+  {
+    "symptoms": ["cough", "fatigue", "headache", "rash"],
+    "label": "demo_condition_c",
+    "probabilities": [
+      0.35136656129525323, 0.26184294372873806, 0.3867904949760084
+    ]
+  },
+  {
+    "symptoms": ["cough", "fatigue", "headache", "rash", "body_ache"],
+    "label": "demo_condition_c",
+    "probabilities": [
+      0.35136656129525323, 0.26184294372873806, 0.3867904949760084
+    ]
+  },
+  {
+    "symptoms": ["cough", "fatigue", "headache", "rash", "sneezing"],
+    "label": "demo_condition_b",
+    "probabilities": [
+      0.3082127020436997, 0.35250133078311696, 0.33928596717318343
+    ]
+  },
+  {
+    "symptoms": [
+      "cough",
+      "fatigue",
+      "headache",
+      "rash",
+      "sneezing",
+      "body_ache"
+    ],
+    "label": "demo_condition_b",
+    "probabilities": [
+      0.30821270204369944, 0.35250133078311696, 0.33928596717318343
+    ]
+  },
+  {
+    "symptoms": ["cough", "fatigue", "headache", "nausea"],
+    "label": "demo_condition_a",
+    "probabilities": [
+      0.37364899133332924, 0.2620395523636337, 0.36431145630303735
+    ]
+  },
+  {
+    "symptoms": ["cough", "fatigue", "headache", "nausea", "body_ache"],
+    "label": "demo_condition_a",
+    "probabilities": [
+      0.37364899133332924, 0.2620395523636337, 0.36431145630303735
+    ]
+  },
+  {
+    "symptoms": ["cough", "fatigue", "headache", "nausea", "sneezing"],
+    "label": "demo_condition_b",
+    "probabilities": [
+      0.3277282434803724, 0.3527334828368295, 0.31953827368279825
+    ]
+  },
+  {
+    "symptoms": [
+      "cough",
+      "fatigue",
+      "headache",
+      "nausea",
+      "sneezing",
+      "body_ache"
+    ],
+    "label": "demo_condition_b",
+    "probabilities": [
+      0.3277282434803724, 0.3527334828368295, 0.31953827368279825
+    ]
+  },
+  {
+    "symptoms": ["cough", "fatigue", "headache", "nausea", "rash"],
+    "label": "demo_condition_c",
+    "probabilities": [
+      0.32641615490221415, 0.29180140609459104, 0.381782439003195
+    ]
+  },
+  {
+    "symptoms": ["cough", "fatigue", "headache", "nausea", "rash", "body_ache"],
+    "label": "demo_condition_c",
+    "probabilities": [
+      0.3264161549022139, 0.29180140609459104, 0.381782439003195
+    ]
+  },
+  {
+    "symptoms": ["cough", "fatigue", "headache", "nausea", "rash", "sneezing"],
+    "label": "demo_condition_b",
+    "probabilities": [
+      0.282358929762849, 0.3873887856604691, 0.33025228457668215
+    ]
+  },
+  {
+    "symptoms": [
+      "cough",
+      "fatigue",
+      "headache",
+      "nausea",
+      "rash",
+      "sneezing",
+      "body_ache"
+    ],
+    "label": "demo_condition_b",
+    "probabilities": [0.282358929762849, 0.3873887856604691, 0.3302522845766819]
+  },
+  {
+    "symptoms": ["fever"],
+    "label": "demo_condition_a",
+    "probabilities": [
+      0.38983147984752414, 0.2734802057728542, 0.3366883143796218
+    ]
+  },
+  {
+    "symptoms": ["fever", "body_ache"],
+    "label": "demo_condition_a",
+    "probabilities": [
+      0.38983147984752414, 0.273480205772854, 0.3366883143796218
+    ]
+  },
+  {
+    "symptoms": ["fever", "sneezing"],
+    "label": "demo_condition_b",
+    "probabilities": [
+      0.3400970647484812, 0.3661690697863424, 0.29373386546517605
+    ]
+  },
+  {
+    "symptoms": ["fever", "sneezing", "body_ache"],
+    "label": "demo_condition_b",
+    "probabilities": [
+      0.3400970647484812, 0.3661690697863424, 0.29373386546517605
+    ]
+  },
+  {
+    "symptoms": ["fever", "rash"],
+    "label": "demo_condition_c",
+    "probabilities": [
+      0.34125974223481903, 0.3051734524314821, 0.35356680533369894
+    ]
+  },
+  {
+    "symptoms": ["fever", "rash", "body_ache"],
+    "label": "demo_condition_c",
+    "probabilities": [
+      0.34125974223481875, 0.3051734524314818, 0.35356680533369894
+    ]
+  },
+  {
+    "symptoms": ["fever", "rash", "sneezing"],
+    "label": "demo_condition_b",
+    "probabilities": [
+      0.29338438957317176, 0.4026507164816551, 0.3039648939451729
+    ]
+  },
+  {
+    "symptoms": ["fever", "rash", "sneezing", "body_ache"],
+    "label": "demo_condition_b",
+    "probabilities": [0.293384389573172, 0.4026507164816551, 0.3039648939451731]
+  },
+  {
+    "symptoms": ["fever", "nausea"],
+    "label": "demo_condition_a",
+    "probabilities": [
+      0.3624219477300313, 0.30499924951826013, 0.3325788027517084
+    ]
+  },
+  {
+    "symptoms": ["fever", "nausea", "body_ache"],
+    "label": "demo_condition_a",
+    "probabilities": [
+      0.3624219477300316, 0.30499924951826013, 0.3325788027517084
+    ]
+  },
+  {
+    "symptoms": ["fever", "nausea", "sneezing"],
+    "label": "demo_condition_b",
+    "probabilities": [
+      0.3116027016135124, 0.40245309968134807, 0.28594419870513943
+    ]
+  },
+  {
+    "symptoms": ["fever", "nausea", "sneezing", "body_ache"],
+    "label": "demo_condition_b",
+    "probabilities": [
+      0.3116027016135124, 0.40245309968134807, 0.28594419870513965
+    ]
+  },
+  {
+    "symptoms": ["fever", "nausea", "rash"],
+    "label": "demo_condition_c",
+    "probabilities": [
+      0.3151031664042121, 0.3380257219774633, 0.3468711116183248
+    ]
+  },
+  {
+    "symptoms": ["fever", "nausea", "rash", "body_ache"],
+    "label": "demo_condition_c",
+    "probabilities": [
+      0.3151031664042121, 0.3380257219774633, 0.3468711116183248
+    ]
+  },
+  {
+    "symptoms": ["fever", "nausea", "rash", "sneezing"],
+    "label": "demo_condition_b",
+    "probabilities": [
+      0.26686699332751385, 0.4393611233680556, 0.29377188330443066
+    ]
+  },
+  {
+    "symptoms": ["fever", "nausea", "rash", "sneezing", "body_ache"],
+    "label": "demo_condition_b",
+    "probabilities": [
+      0.26686699332751385, 0.4393611233680552, 0.29377188330443066
+    ]
+  },
+  {
+    "symptoms": ["fever", "headache"],
+    "label": "demo_condition_a",
+    "probabilities": [
+      0.3898314798475245, 0.2734802057728542, 0.3366883143796218
+    ]
+  },
+  {
+    "symptoms": ["fever", "headache", "body_ache"],
+    "label": "demo_condition_a",
+    "probabilities": [
+      0.38983147984752414, 0.273480205772854, 0.3366883143796215
+    ]
+  },
+  {
+    "symptoms": ["fever", "headache", "sneezing"],
+    "label": "demo_condition_b",
+    "probabilities": [
+      0.3400970647484812, 0.3661690697863424, 0.29373386546517605
+    ]
+  },
+  {
+    "symptoms": ["fever", "headache", "sneezing", "body_ache"],
+    "label": "demo_condition_b",
+    "probabilities": [
+      0.3400970647484812, 0.3661690697863427, 0.2937338654651763
+    ]
+  },
+  {
+    "symptoms": ["fever", "headache", "rash"],
+    "label": "demo_condition_c",
+    "probabilities": [
+      0.34125974223481903, 0.3051734524314821, 0.3535668053336993
+    ]
+  },
+  {
+    "symptoms": ["fever", "headache", "rash", "body_ache"],
+    "label": "demo_condition_c",
+    "probabilities": [
+      0.34125974223481875, 0.3051734524314818, 0.35356680533369894
+    ]
+  },
+  {
+    "symptoms": ["fever", "headache", "rash", "sneezing"],
+    "label": "demo_condition_b",
+    "probabilities": [0.293384389573172, 0.4026507164816551, 0.3039648939451729]
+  },
+  {
+    "symptoms": ["fever", "headache", "rash", "sneezing", "body_ache"],
+    "label": "demo_condition_b",
+    "probabilities": [0.293384389573172, 0.4026507164816551, 0.3039648939451729]
+  },
+  {
+    "symptoms": ["fever", "headache", "nausea"],
+    "label": "demo_condition_a",
+    "probabilities": [
+      0.3624219477300316, 0.30499924951826013, 0.3325788027517084
+    ]
+  },
+  {
+    "symptoms": ["fever", "headache", "nausea", "body_ache"],
+    "label": "demo_condition_a",
+    "probabilities": [
+      0.3624219477300313, 0.30499924951826013, 0.3325788027517084
+    ]
+  },
+  {
+    "symptoms": ["fever", "headache", "nausea", "sneezing"],
+    "label": "demo_condition_b",
+    "probabilities": [
+      0.3116027016135124, 0.40245309968134807, 0.28594419870513965
+    ]
+  },
+  {
+    "symptoms": ["fever", "headache", "nausea", "sneezing", "body_ache"],
+    "label": "demo_condition_b",
+    "probabilities": [
+      0.3116027016135124, 0.40245309968134807, 0.28594419870513965
+    ]
+  },
+  {
+    "symptoms": ["fever", "headache", "nausea", "rash"],
+    "label": "demo_condition_c",
+    "probabilities": [
+      0.3151031664042121, 0.33802572197746295, 0.3468711116183248
+    ]
+  },
+  {
+    "symptoms": ["fever", "headache", "nausea", "rash", "body_ache"],
+    "label": "demo_condition_c",
+    "probabilities": [
+      0.3151031664042121, 0.33802572197746295, 0.3468711116183248
+    ]
+  },
+  {
+    "symptoms": ["fever", "headache", "nausea", "rash", "sneezing"],
+    "label": "demo_condition_b",
+    "probabilities": [
+      0.26686699332751385, 0.4393611233680556, 0.29377188330443066
+    ]
+  },
+  {
+    "symptoms": [
+      "fever",
+      "headache",
+      "nausea",
+      "rash",
+      "sneezing",
+      "body_ache"
+    ],
+    "label": "demo_condition_b",
+    "probabilities": [
+      0.26686699332751385, 0.4393611233680556, 0.29377188330443066
+    ]
+  },
+  {
+    "symptoms": ["fever", "fatigue"],
+    "label": "demo_condition_a",
+    "probabilities": [
+      0.3675683778207476, 0.2740088215518275, 0.35842280062742504
+    ]
+  },
+  {
+    "symptoms": ["fever", "fatigue", "body_ache"],
+    "label": "demo_condition_a",
+    "probabilities": [
+      0.3675683778207476, 0.2740088215518277, 0.35842280062742504
+    ]
+  },
+  {
+    "symptoms": ["fever", "fatigue", "sneezing"],
+    "label": "demo_condition_b",
+    "probabilities": [
+      0.32059521398712193, 0.366786396078773, 0.3126183899341049
+    ]
+  },
+  {
+    "symptoms": ["fever", "fatigue", "sneezing", "body_ache"],
+    "label": "demo_condition_b",
+    "probabilities": [
+      0.32059521398712193, 0.366786396078773, 0.3126183899341049
+    ]
+  },
+  {
+    "symptoms": ["fever", "fatigue", "rash"],
+    "label": "demo_condition_c",
+    "probabilities": [
+      0.32051262166319316, 0.30456797852750367, 0.3749193998093031
+    ]
+  },
+  {
+    "symptoms": ["fever", "fatigue", "rash", "body_ache"],
+    "label": "demo_condition_c",
+    "probabilities": [
+      0.32051262166319316, 0.30456797852750367, 0.3749193998093031
+    ]
+  },
+  {
+    "symptoms": ["fever", "fatigue", "rash", "sneezing"],
+    "label": "demo_condition_b",
+    "probabilities": [
+      0.27562460131922806, 0.4019637271433126, 0.3224116715374597
+    ]
+  },
+  {
+    "symptoms": ["fever", "fatigue", "rash", "sneezing", "body_ache"],
+    "label": "demo_condition_b",
+    "probabilities": [
+      0.27562460131922806, 0.4019637271433126, 0.3224116715374597
+    ]
+  },
+  {
+    "symptoms": ["fever", "fatigue", "nausea"],
+    "label": "demo_condition_c",
+    "probabilities": [
+      0.34125974223481903, 0.3051734524314821, 0.35356680533369894
+    ]
+  },
+  {
+    "symptoms": ["fever", "fatigue", "nausea", "body_ache"],
+    "label": "demo_condition_c",
+    "probabilities": [
+      0.34125974223481903, 0.3051734524314821, 0.35356680533369894
+    ]
+  },
+  {
+    "symptoms": ["fever", "fatigue", "nausea", "sneezing"],
+    "label": "demo_condition_b",
+    "probabilities": [0.293384389573172, 0.4026507164816551, 0.3039648939451729]
+  },
+  {
+    "symptoms": ["fever", "fatigue", "nausea", "sneezing", "body_ache"],
+    "label": "demo_condition_b",
+    "probabilities": [0.293384389573172, 0.4026507164816551, 0.3039648939451729]
+  },
+  {
+    "symptoms": ["fever", "fatigue", "nausea", "rash"],
+    "label": "demo_condition_c",
+    "probabilities": [
+      0.2956149686877477, 0.33697743067338326, 0.36740760063886907
+    ]
+  },
+  {
+    "symptoms": ["fever", "fatigue", "nausea", "rash", "body_ache"],
+    "label": "demo_condition_c",
+    "probabilities": [
+      0.2956149686877477, 0.33697743067338326, 0.36740760063886907
+    ]
+  },
+  {
+    "symptoms": ["fever", "fatigue", "nausea", "rash", "sneezing"],
+    "label": "demo_condition_b",
+    "probabilities": [
+      0.25048097244717726, 0.4382066014567138, 0.3113124260961091
+    ]
+  },
+  {
+    "symptoms": ["fever", "fatigue", "nausea", "rash", "sneezing", "body_ache"],
+    "label": "demo_condition_b",
+    "probabilities": [
+      0.25048097244717726, 0.4382066014567138, 0.3113124260961091
+    ]
+  },
+  {
+    "symptoms": ["fever", "fatigue", "headache"],
+    "label": "demo_condition_a",
+    "probabilities": [
+      0.3675683778207476, 0.2740088215518277, 0.35842280062742504
+    ]
+  },
+  {
+    "symptoms": ["fever", "fatigue", "headache", "body_ache"],
+    "label": "demo_condition_a",
+    "probabilities": [
+      0.3675683778207476, 0.2740088215518277, 0.35842280062742504
+    ]
+  },
+  {
+    "symptoms": ["fever", "fatigue", "headache", "sneezing"],
+    "label": "demo_condition_b",
+    "probabilities": [
+      0.32059521398712193, 0.366786396078773, 0.3126183899341049
+    ]
+  },
+  {
+    "symptoms": ["fever", "fatigue", "headache", "sneezing", "body_ache"],
+    "label": "demo_condition_b",
+    "probabilities": [
+      0.32059521398712193, 0.366786396078773, 0.3126183899341049
+    ]
+  },
+  {
+    "symptoms": ["fever", "fatigue", "headache", "rash"],
+    "label": "demo_condition_c",
+    "probabilities": [
+      0.3205126216631929, 0.30456797852750367, 0.3749193998093031
+    ]
+  },
+  {
+    "symptoms": ["fever", "fatigue", "headache", "rash", "body_ache"],
+    "label": "demo_condition_c",
+    "probabilities": [
+      0.3205126216631929, 0.30456797852750367, 0.3749193998093031
+    ]
+  },
+  {
+    "symptoms": ["fever", "fatigue", "headache", "rash", "sneezing"],
+    "label": "demo_condition_b",
+    "probabilities": [
+      0.27562460131922806, 0.4019637271433126, 0.3224116715374594
+    ]
+  },
+  {
+    "symptoms": [
+      "fever",
+      "fatigue",
+      "headache",
+      "rash",
+      "sneezing",
+      "body_ache"
+    ],
+    "label": "demo_condition_b",
+    "probabilities": [
+      0.27562460131922806, 0.4019637271433126, 0.3224116715374594
+    ]
+  },
+  {
+    "symptoms": ["fever", "fatigue", "headache", "nausea"],
+    "label": "demo_condition_c",
+    "probabilities": [
+      0.34125974223481903, 0.3051734524314821, 0.35356680533369894
+    ]
+  },
+  {
+    "symptoms": ["fever", "fatigue", "headache", "nausea", "body_ache"],
+    "label": "demo_condition_c",
+    "probabilities": [
+      0.34125974223481903, 0.3051734524314821, 0.35356680533369894
+    ]
+  },
+  {
+    "symptoms": ["fever", "fatigue", "headache", "nausea", "sneezing"],
+    "label": "demo_condition_b",
+    "probabilities": [
+      0.29338438957317176, 0.4026507164816551, 0.3039648939451729
+    ]
+  },
+  {
+    "symptoms": [
+      "fever",
+      "fatigue",
+      "headache",
+      "nausea",
+      "sneezing",
+      "body_ache"
+    ],
+    "label": "demo_condition_b",
+    "probabilities": [0.293384389573172, 0.4026507164816555, 0.3039648939451729]
+  },
+  {
+    "symptoms": ["fever", "fatigue", "headache", "nausea", "rash"],
+    "label": "demo_condition_c",
+    "probabilities": [
+      0.2956149686877477, 0.33697743067338326, 0.36740760063886907
+    ]
+  },
+  {
+    "symptoms": ["fever", "fatigue", "headache", "nausea", "rash", "body_ache"],
+    "label": "demo_condition_c",
+    "probabilities": [
+      0.2956149686877477, 0.33697743067338326, 0.36740760063886907
+    ]
+  },
+  {
+    "symptoms": ["fever", "fatigue", "headache", "nausea", "rash", "sneezing"],
+    "label": "demo_condition_b",
+    "probabilities": [
+      0.25048097244717726, 0.4382066014567138, 0.3113124260961088
+    ]
+  },
+  {
+    "symptoms": [
+      "fever",
+      "fatigue",
+      "headache",
+      "nausea",
+      "rash",
+      "sneezing",
+      "body_ache"
+    ],
+    "label": "demo_condition_b",
+    "probabilities": [
+      0.25048097244717704, 0.4382066014567138, 0.3113124260961088
+    ]
+  },
+  {
+    "symptoms": ["fever", "cough"],
+    "label": "demo_condition_a",
+    "probabilities": [0.383280257123351, 0.285689566051721, 0.3310301768249276]
+  },
+  {
+    "symptoms": ["fever", "cough", "body_ache"],
+    "label": "demo_condition_a",
+    "probabilities": [
+      0.38328025712335134, 0.28568956605172124, 0.3310301768249276
+    ]
+  },
+  {
+    "symptoms": ["fever", "cough", "sneezing"],
+    "label": "demo_condition_b",
+    "probabilities": [
+      0.33248789089081177, 0.3803501088021627, 0.2871620003070255
+    ]
+  },
+  {
+    "symptoms": ["fever", "cough", "sneezing", "body_ache"],
+    "label": "demo_condition_b",
+    "probabilities": [
+      0.33248789089081177, 0.3803501088021627, 0.2871620003070255
+    ]
+  },
+  {
+    "symptoms": ["fever", "cough", "rash"],
+    "label": "demo_condition_c",
+    "probabilities": [
+      0.33487260296166094, 0.3181780743682645, 0.34694932267007467
+    ]
+  },
+  {
+    "symptoms": ["fever", "cough", "rash", "body_ache"],
+    "label": "demo_condition_c",
+    "probabilities": [
+      0.33487260296166094, 0.3181780743682645, 0.34694932267007467
+    ]
+  },
+  {
+    "symptoms": ["fever", "cough", "rash", "sneezing"],
+    "label": "demo_condition_b",
+    "probabilities": [
+      0.28618241736099337, 0.41731439012537813, 0.2965031925136286
+    ]
+  },
+  {
+    "symptoms": ["fever", "cough", "rash", "sneezing", "body_ache"],
+    "label": "demo_condition_b",
+    "probabilities": [
+      0.28618241736099337, 0.41731439012537813, 0.2965031925136286
+    ]
+  },
+  {
+    "symptoms": ["fever", "cough", "nausea"],
+    "label": "demo_condition_a",
+    "probabilities": [0.355642528707987, 0.3179998454746091, 0.326357625817404]
+  },
+  {
+    "symptoms": ["fever", "cough", "nausea", "body_ache"],
+    "label": "demo_condition_a",
+    "probabilities": [0.355642528707987, 0.3179998454746091, 0.326357625817404]
+  },
+  {
+    "symptoms": ["fever", "cough", "nausea", "sneezing"],
+    "label": "demo_condition_b",
+    "probabilities": [
+      0.30395717003531936, 0.4171146018832897, 0.2789282280813906
+    ]
+  },
+  {
+    "symptoms": ["fever", "cough", "nausea", "sneezing", "body_ache"],
+    "label": "demo_condition_b",
+    "probabilities": [
+      0.30395717003531936, 0.4171146018832897, 0.2789282280813906
+    ]
+  },
+  {
+    "symptoms": ["fever", "cough", "nausea", "rash"],
+    "label": "demo_condition_b",
+    "probabilities": [
+      0.3085838367658769, 0.35172164442653087, 0.339694518807592
+    ]
+  },
+  {
+    "symptoms": ["fever", "cough", "nausea", "rash", "body_ache"],
+    "label": "demo_condition_b",
+    "probabilities": [
+      0.3085838367658769, 0.35172164442653087, 0.339694518807592
+    ]
+  },
+  {
+    "symptoms": ["fever", "cough", "nausea", "rash", "sneezing"],
+    "label": "demo_condition_b",
+    "probabilities": [
+      0.2597346612923253, 0.4543448520417128, 0.2859204866659621
+    ]
+  },
+  {
+    "symptoms": ["fever", "cough", "nausea", "rash", "sneezing", "body_ache"],
+    "label": "demo_condition_b",
+    "probabilities": [
+      0.2597346612923251, 0.4543448520417128, 0.2859204866659621
+    ]
+  },
+  {
+    "symptoms": ["fever", "cough", "headache"],
+    "label": "demo_condition_a",
+    "probabilities": [
+      0.38328025712335134, 0.28568956605172124, 0.3310301768249276
+    ]
+  },
+  {
+    "symptoms": ["fever", "cough", "headache", "body_ache"],
+    "label": "demo_condition_a",
+    "probabilities": [
+      0.38328025712335134, 0.28568956605172124, 0.3310301768249276
+    ]
+  },
+  {
+    "symptoms": ["fever", "cough", "headache", "sneezing"],
+    "label": "demo_condition_b",
+    "probabilities": [
+      0.3324878908908115, 0.3803501088021627, 0.2871620003070255
+    ]
+  },
+  {
+    "symptoms": ["fever", "cough", "headache", "sneezing", "body_ache"],
+    "label": "demo_condition_b",
+    "probabilities": [
+      0.33248789089081177, 0.3803501088021627, 0.28716200030702577
+    ]
+  },
+  {
+    "symptoms": ["fever", "cough", "headache", "rash"],
+    "label": "demo_condition_c",
+    "probabilities": [
+      0.33487260296166094, 0.3181780743682645, 0.34694932267007467
+    ]
+  },
+  {
+    "symptoms": ["fever", "cough", "headache", "rash", "body_ache"],
+    "label": "demo_condition_c",
+    "probabilities": [
+      0.33487260296166094, 0.3181780743682645, 0.34694932267007467
+    ]
+  },
+  {
+    "symptoms": ["fever", "cough", "headache", "rash", "sneezing"],
+    "label": "demo_condition_b",
+    "probabilities": [
+      0.28618241736099337, 0.41731439012537813, 0.29650319251362833
+    ]
+  },
+  {
+    "symptoms": ["fever", "cough", "headache", "rash", "sneezing", "body_ache"],
+    "label": "demo_condition_b",
+    "probabilities": [
+      0.28618241736099315, 0.41731439012537813, 0.29650319251362833
+    ]
+  },
+  {
+    "symptoms": ["fever", "cough", "headache", "nausea"],
+    "label": "demo_condition_a",
+    "probabilities": [0.3556425287079867, 0.3179998454746091, 0.326357625817404]
+  },
+  {
+    "symptoms": ["fever", "cough", "headache", "nausea", "body_ache"],
+    "label": "demo_condition_a",
+    "probabilities": [0.3556425287079867, 0.3179998454746091, 0.326357625817404]
+  },
+  {
+    "symptoms": ["fever", "cough", "headache", "nausea", "sneezing"],
+    "label": "demo_condition_b",
+    "probabilities": [
+      0.30395717003531936, 0.4171146018832897, 0.2789282280813906
+    ]
+  },
+  {
+    "symptoms": [
+      "fever",
+      "cough",
+      "headache",
+      "nausea",
+      "sneezing",
+      "body_ache"
+    ],
+    "label": "demo_condition_b",
+    "probabilities": [0.30395717003531963, 0.41711460188329, 0.2789282280813906]
+  },
+  {
+    "symptoms": ["fever", "cough", "headache", "nausea", "rash"],
+    "label": "demo_condition_b",
+    "probabilities": [
+      0.3085838367658769, 0.35172164442653087, 0.339694518807592
+    ]
+  },
+  {
+    "symptoms": ["fever", "cough", "headache", "nausea", "rash", "body_ache"],
+    "label": "demo_condition_b",
+    "probabilities": [
+      0.30858383676587664, 0.35172164442653087, 0.339694518807592
+    ]
+  },
+  {
+    "symptoms": ["fever", "cough", "headache", "nausea", "rash", "sneezing"],
+    "label": "demo_condition_b",
+    "probabilities": [
+      0.2597346612923251, 0.4543448520417128, 0.28592048666596187
+    ]
+  },
+  {
+    "symptoms": [
+      "fever",
+      "cough",
+      "headache",
+      "nausea",
+      "rash",
+      "sneezing",
+      "body_ache"
+    ],
+    "label": "demo_condition_b",
+    "probabilities": [
+      0.2597346612923251, 0.4543448520417128, 0.28592048666596187
+    ]
+  },
+  {
+    "symptoms": ["fever", "cough", "fatigue"],
+    "label": "demo_condition_a",
+    "probabilities": [
+      0.36137955371780106, 0.2862324838003183, 0.3523879624818804
+    ]
+  },
+  {
+    "symptoms": ["fever", "cough", "fatigue", "body_ache"],
+    "label": "demo_condition_a",
+    "probabilities": [
+      0.36137955371780106, 0.2862324838003183, 0.3523879624818804
+    ]
+  },
+  {
+    "symptoms": ["fever", "cough", "fatigue", "sneezing"],
+    "label": "demo_condition_b",
+    "probabilities": [
+      0.3134105437474825, 0.38097697265927777, 0.3056124835932393
+    ]
+  },
+  {
+    "symptoms": ["fever", "cough", "fatigue", "sneezing", "body_ache"],
+    "label": "demo_condition_b",
+    "probabilities": [
+      0.3134105437474828, 0.38097697265927777, 0.3056124835932395
+    ]
+  },
+  {
+    "symptoms": ["fever", "cough", "fatigue", "rash"],
+    "label": "demo_condition_c",
+    "probabilities": [
+      0.31452547245439044, 0.31755859105168194, 0.36791593649392745
+    ]
+  },
+  {
+    "symptoms": ["fever", "cough", "fatigue", "rash", "body_ache"],
+    "label": "demo_condition_c",
+    "probabilities": [
+      0.31452547245439016, 0.31755859105168194, 0.36791593649392745
+    ]
+  },
+  {
+    "symptoms": ["fever", "cough", "fatigue", "rash", "sneezing"],
+    "label": "demo_condition_b",
+    "probabilities": [
+      0.2688698557362145, 0.41661983132713987, 0.3145103129366455
+    ]
+  },
+  {
+    "symptoms": ["fever", "cough", "fatigue", "rash", "sneezing", "body_ache"],
+    "label": "demo_condition_b",
+    "probabilities": [
+      0.2688698557362145, 0.41661983132713987, 0.3145103129366455
+    ]
+  },
+  {
+    "symptoms": ["fever", "cough", "fatigue", "nausea"],
+    "label": "demo_condition_c",
+    "probabilities": [
+      0.33487260296166094, 0.3181780743682645, 0.3469493226700744
+    ]
+  },
+  {
+    "symptoms": ["fever", "cough", "fatigue", "nausea", "body_ache"],
+    "label": "demo_condition_c",
+    "probabilities": [
+      0.33487260296166094, 0.3181780743682645, 0.3469493226700744
+    ]
+  },
+  {
+    "symptoms": ["fever", "cough", "fatigue", "nausea", "sneezing"],
+    "label": "demo_condition_b",
+    "probabilities": [
+      0.28618241736099337, 0.41731439012537813, 0.29650319251362833
+    ]
+  },
+  {
+    "symptoms": [
+      "fever",
+      "cough",
+      "fatigue",
+      "nausea",
+      "sneezing",
+      "body_ache"
+    ],
+    "label": "demo_condition_b",
+    "probabilities": [
+      0.28618241736099315, 0.41731439012537813, 0.29650319251362833
+    ]
+  },
+  {
+    "symptoms": ["fever", "cough", "fatigue", "nausea", "rash"],
+    "label": "demo_condition_c",
+    "probabilities": [
+      0.2895174164912221, 0.3506533779432045, 0.3598292055655732
+    ]
+  },
+  {
+    "symptoms": ["fever", "cough", "fatigue", "nausea", "rash", "body_ache"],
+    "label": "demo_condition_c",
+    "probabilities": [
+      0.2895174164912221, 0.3506533779432045, 0.3598292055655732
+    ]
+  },
+  {
+    "symptoms": ["fever", "cough", "fatigue", "nausea", "rash", "sneezing"],
+    "label": "demo_condition_b",
+    "probabilities": [
+      0.2438036980749276, 0.4531827835832151, 0.30301351834185725
+    ]
+  },
+  {
+    "symptoms": [
+      "fever",
+      "cough",
+      "fatigue",
+      "nausea",
+      "rash",
+      "sneezing",
+      "body_ache"
+    ],
+    "label": "demo_condition_b",
+    "probabilities": [0.2438036980749276, 0.4531827835832151, 0.303013518341857]
+  },
+  {
+    "symptoms": ["fever", "cough", "fatigue", "headache"],
+    "label": "demo_condition_a",
+    "probabilities": [
+      0.3613795537178014, 0.2862324838003183, 0.3523879624818807
+    ]
+  },
+  {
+    "symptoms": ["fever", "cough", "fatigue", "headache", "body_ache"],
+    "label": "demo_condition_a",
+    "probabilities": [
+      0.36137955371780106, 0.286232483800318, 0.3523879624818804
+    ]
+  },
+  {
+    "symptoms": ["fever", "cough", "fatigue", "headache", "sneezing"],
+    "label": "demo_condition_b",
+    "probabilities": [
+      0.3134105437474828, 0.38097697265927777, 0.3056124835932395
+    ]
+  },
+  {
+    "symptoms": [
+      "fever",
+      "cough",
+      "fatigue",
+      "headache",
+      "sneezing",
+      "body_ache"
+    ],
+    "label": "demo_condition_b",
+    "probabilities": [
+      0.3134105437474825, 0.38097697265927777, 0.3056124835932393
+    ]
+  },
+  {
+    "symptoms": ["fever", "cough", "fatigue", "headache", "rash"],
+    "label": "demo_condition_c",
+    "probabilities": [
+      0.31452547245439044, 0.3175585910516822, 0.3679159364939278
+    ]
+  },
+  {
+    "symptoms": ["fever", "cough", "fatigue", "headache", "rash", "body_ache"],
+    "label": "demo_condition_c",
+    "probabilities": [
+      0.31452547245439044, 0.31755859105168194, 0.3679159364939278
+    ]
+  },
+  {
+    "symptoms": ["fever", "cough", "fatigue", "headache", "rash", "sneezing"],
+    "label": "demo_condition_b",
+    "probabilities": [
+      0.26886985573621475, 0.41661983132713987, 0.3145103129366455
+    ]
+  },
+  {
+    "symptoms": [
+      "fever",
+      "cough",
+      "fatigue",
+      "headache",
+      "rash",
+      "sneezing",
+      "body_ache"
+    ],
+    "label": "demo_condition_b",
+    "probabilities": [
+      0.26886985573621475, 0.41661983132713987, 0.3145103129366455
+    ]
+  },
+  {
+    "symptoms": ["fever", "cough", "fatigue", "headache", "nausea"],
+    "label": "demo_condition_c",
+    "probabilities": [
+      0.33487260296166094, 0.3181780743682645, 0.3469493226700744
+    ]
+  },
+  {
+    "symptoms": [
+      "fever",
+      "cough",
+      "fatigue",
+      "headache",
+      "nausea",
+      "body_ache"
+    ],
+    "label": "demo_condition_c",
+    "probabilities": [
+      0.33487260296166094, 0.3181780743682645, 0.34694932267007467
+    ]
+  },
+  {
+    "symptoms": ["fever", "cough", "fatigue", "headache", "nausea", "sneezing"],
+    "label": "demo_condition_b",
+    "probabilities": [
+      0.28618241736099337, 0.41731439012537813, 0.29650319251362833
+    ]
+  },
+  {
+    "symptoms": [
+      "fever",
+      "cough",
+      "fatigue",
+      "headache",
+      "nausea",
+      "sneezing",
+      "body_ache"
+    ],
+    "label": "demo_condition_b",
+    "probabilities": [
+      0.28618241736099337, 0.41731439012537813, 0.29650319251362833
+    ]
+  },
+  {
+    "symptoms": ["fever", "cough", "fatigue", "headache", "nausea", "rash"],
+    "label": "demo_condition_c",
+    "probabilities": [
+      0.2895174164912221, 0.3506533779432045, 0.3598292055655732
+    ]
+  },
+  {
+    "symptoms": [
+      "fever",
+      "cough",
+      "fatigue",
+      "headache",
+      "nausea",
+      "rash",
+      "body_ache"
+    ],
+    "label": "demo_condition_c",
+    "probabilities": [
+      0.28951741649122237, 0.3506533779432045, 0.3598292055655732
+    ]
+  },
+  {
+    "symptoms": [
+      "fever",
+      "cough",
+      "fatigue",
+      "headache",
+      "nausea",
+      "rash",
+      "sneezing"
+    ],
+    "label": "demo_condition_b",
+    "probabilities": [
+      0.24380369807492738, 0.4531827835832151, 0.303013518341857
+    ]
+  },
+  {
+    "symptoms": [
+      "fever",
+      "cough",
+      "fatigue",
+      "headache",
+      "nausea",
+      "rash",
+      "sneezing",
+      "body_ache"
+    ],
+    "label": "demo_condition_b",
+    "probabilities": [
+      0.2438036980749276, 0.4531827835832151, 0.30301351834185725
+    ]
+  }
+]

@@ -1,0 +1,413 @@
+{
+  "openapi": "3.1.0",
+  "info": {
+    "title": "Disease Prediction Demo API",
+    "version": "1.0.0",
+    "description": "Synthetic educational demo only. No clinical diagnoses. Application records are not persisted."
+  },
+  "servers": [
+    {
+      "url": "/"
+    }
+  ],
+  "paths": {
+    "/api/health/live": {
+      "get": {
+        "summary": "Process liveness",
+        "responses": {
+          "200": {
+            "description": "Process is running"
+          }
+        }
+      }
+    },
+    "/api/health/ready": {
+      "get": {
+        "summary": "Model readiness",
+        "responses": {
+          "200": {
+            "description": "The bundled model is ready"
+          }
+        }
+      }
+    },
+    "/api/v1/model": {
+      "get": {
+        "summary": "Model version, evaluation and feature metadata",
+        "responses": {
+          "200": {
+            "description": "Model metadata"
+          }
+        }
+      }
+    },
+    "/api/v1/predictions": {
+      "post": {
+        "summary": "Classify synthetic features and optionally rank fictional facilities",
+        "requestBody": {
+          "required": true,
+          "content": {
+            "application/json": {
+              "schema": {
+                "$ref": "#/components/schemas/PredictionRequest"
+              }
+            }
+          }
+        },
+        "responses": {
+          "200": {
+            "description": "Computed demo result",
+            "content": {
+              "application/json": {
+                "schema": {
+                  "$ref": "#/components/schemas/PredictionResponse"
+                }
+              }
+            }
+          },
+          "400": {
+            "description": "Structured error with a request ID",
+            "content": {
+              "application/json": {
+                "schema": {
+                  "type": "object",
+                  "required": ["error"],
+                  "properties": {
+                    "error": {
+                      "type": "object",
+                      "required": ["code", "message", "requestId"],
+                      "properties": {
+                        "code": {
+                          "type": "string"
+                        },
+                        "message": {
+                          "type": "string"
+                        },
+                        "requestId": {
+                          "type": "string"
+                        }
+                      }
+                    }
+                  }
+                }
+              }
+            }
+          },
+          "403": {
+            "description": "Structured error with a request ID",
+            "content": {
+              "application/json": {
+                "schema": {
+                  "type": "object",
+                  "required": ["error"],
+                  "properties": {
+                    "error": {
+                      "type": "object",
+                      "required": ["code", "message", "requestId"],
+                      "properties": {
+                        "code": {
+                          "type": "string"
+                        },
+                        "message": {
+                          "type": "string"
+                        },
+                        "requestId": {
+                          "type": "string"
+                        }
+                      }
+                    }
+                  }
+                }
+              }
+            }
+          },
+          "413": {
+            "description": "Structured error with a request ID",
+            "content": {
+              "application/json": {
+                "schema": {
+                  "type": "object",
+                  "required": ["error"],
+                  "properties": {
+                    "error": {
+                      "type": "object",
+                      "required": ["code", "message", "requestId"],
+                      "properties": {
+                        "code": {
+                          "type": "string"
+                        },
+                        "message": {
+                          "type": "string"
+                        },
+                        "requestId": {
+                          "type": "string"
+                        }
+                      }
+                    }
+                  }
+                }
+              }
+            }
+          },
+          "415": {
+            "description": "Structured error with a request ID",
+            "content": {
+              "application/json": {
+                "schema": {
+                  "type": "object",
+                  "required": ["error"],
+                  "properties": {
+                    "error": {
+                      "type": "object",
+                      "required": ["code", "message", "requestId"],
+                      "properties": {
+                        "code": {
+                          "type": "string"
+                        },
+                        "message": {
+                          "type": "string"
+                        },
+                        "requestId": {
+                          "type": "string"
+                        }
+                      }
+                    }
+                  }
+                }
+              }
+            }
+          },
+          "422": {
+            "description": "Structured error with a request ID",
+            "content": {
+              "application/json": {
+                "schema": {
+                  "type": "object",
+                  "required": ["error"],
+                  "properties": {
+                    "error": {
+                      "type": "object",
+                      "required": ["code", "message", "requestId"],
+                      "properties": {
+                        "code": {
+                          "type": "string"
+                        },
+                        "message": {
+                          "type": "string"
+                        },
+                        "requestId": {
+                          "type": "string"
+                        }
+                      }
+                    }
+                  }
+                }
+              }
+            }
+          },
+          "429": {
+            "description": "Structured error with a request ID",
+            "content": {
+              "application/json": {
+                "schema": {
+                  "type": "object",
+                  "required": ["error"],
+                  "properties": {
+                    "error": {
+                      "type": "object",
+                      "required": ["code", "message", "requestId"],
+                      "properties": {
+                        "code": {
+                          "type": "string"
+                        },
+                        "message": {
+                          "type": "string"
+                        },
+                        "requestId": {
+                          "type": "string"
+                        }
+                      }
+                    }
+                  }
+                }
+              }
+            }
+          },
+          "500": {
+            "description": "Structured error with a request ID",
+            "content": {
+              "application/json": {
+                "schema": {
+                  "type": "object",
+                  "required": ["error"],
+                  "properties": {
+                    "error": {
+                      "type": "object",
+                      "required": ["code", "message", "requestId"],
+                      "properties": {
+                        "code": {
+                          "type": "string"
+                        },
+                        "message": {
+                          "type": "string"
+                        },
+                        "requestId": {
+                          "type": "string"
+                        }
+                      }
+                    }
+                  }
+                }
+              }
+            }
+          }
+        }
+      }
+    }
+  },
+  "components": {
+    "schemas": {
+      "PredictionRequest": {
+        "type": "object",
+        "additionalProperties": false,
+        "required": ["symptoms"],
+        "properties": {
+          "symptoms": {
+            "type": "array",
+            "items": {
+              "type": "string",
+              "enum": [
+                "fever",
+                "cough",
+                "fatigue",
+                "headache",
+                "nausea",
+                "rash",
+                "sneezing",
+                "body_ache"
+              ]
+            },
+            "minItems": 1,
+            "maxItems": 8,
+            "uniqueItems": true
+          },
+          "location": {
+            "type": "object",
+            "additionalProperties": false,
+            "required": ["latitude", "longitude"],
+            "properties": {
+              "latitude": {
+                "type": "number",
+                "minimum": -90,
+                "maximum": 90
+              },
+              "longitude": {
+                "type": "number",
+                "minimum": -180,
+                "maximum": 180
+              }
+            }
+          },
+          "hospitalLimit": {
+            "type": "integer",
+            "minimum": 1,
+            "maximum": 4,
+            "default": 3
+          }
+        }
+      },
+      "PredictionResponse": {
+        "type": "object",
+        "required": [
+          "requestId",
+          "modelVersion",
+          "demoOnly",
+          "label",
+          "scores",
+          "hospitals",
+          "rankingIncluded",
+          "selectedSymptoms",
+          "notice"
+        ],
+        "properties": {
+          "requestId": {
+            "type": "string"
+          },
+          "modelVersion": {
+            "type": "string"
+          },
+          "demoOnly": {
+            "type": "boolean",
+            "const": true
+          },
+          "label": {
+            "type": "string"
+          },
+          "scores": {
+            "type": "array",
+            "items": {
+              "type": "object",
+              "properties": {
+                "label": {
+                  "type": "string"
+                },
+                "score": {
+                  "type": "number",
+                  "minimum": 0,
+                  "maximum": 1
+                }
+              }
+            }
+          },
+          "hospitals": {
+            "type": "array",
+            "items": {
+              "type": "object",
+              "properties": {
+                "name": {
+                  "type": "string"
+                },
+                "distanceKm": {
+                  "type": "number",
+                  "minimum": 0
+                },
+                "latitude": {
+                  "type": "number"
+                },
+                "longitude": {
+                  "type": "number"
+                },
+                "fictional": {
+                  "type": "boolean",
+                  "const": true
+                }
+              }
+            }
+          },
+          "rankingIncluded": {
+            "type": "boolean"
+          },
+          "selectedSymptoms": {
+            "type": "array",
+            "items": {
+              "type": "string",
+              "enum": [
+                "fever",
+                "cough",
+                "fatigue",
+                "headache",
+                "nausea",
+                "rash",
+                "sneezing",
+                "body_ache"
+              ]
+            }
+          },
+          "notice": {
+            "type": "string"
+          }
+        }
+      }
+    }
+  }
+}

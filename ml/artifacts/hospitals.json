@@ -1,0 +1,26 @@
+[
+  {
+    "name": "Fictional Demo Hospital A",
+    "latitude": 12.98,
+    "longitude": 77.6,
+    "conditions": "demo_condition_a;demo_condition_b"
+  },
+  {
+    "name": "Fictional Demo Hospital B",
+    "latitude": 12.94,
+    "longitude": 77.58,
+    "conditions": "demo_condition_c"
+  },
+  {
+    "name": "Fictional Demo Hospital C",
+    "latitude": 13.02,
+    "longitude": 77.62,
+    "conditions": "all"
+  },
+  {
+    "name": "Fictional Demo Hospital D",
+    "latitude": 12.91,
+    "longitude": 77.64,
+    "conditions": "all"
+  }
+]

@@ -103,7 +103,7 @@ def main():
         frame = synthetic_data()
         model, report = fit_models(frame)
         condition = classify(model, [s.strip() for s in args.symptoms.split(',') if s.strip()])
-        hospitals = pd.read_csv(Path(__file__).parent / 'fictional_hospitals.csv')
+        hospitals = pd.read_csv(Path(__file__).resolve().parents[2] / 'data' / 'fictional_hospitals.csv')
         report.update({'notice': NOTICE, 'data_source': 'generated synthetic patterns', 'predicted_demo_label': condition,
                        'nearby_fictional_hospitals': rank_hospitals(hospitals, condition, args.latitude, args.longitude)})
         args.output.mkdir(parents=True, exist_ok=True)

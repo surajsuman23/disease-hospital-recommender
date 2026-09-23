@@ -1,6 +1,6 @@
 import unittest
 import pandas as pd
-from recommender import classify, fit_models, haversine_km, rank_hospitals, synthetic_data, validate_symptoms
+from disease_model.core import classify, fit_models, haversine_km, rank_hospitals, synthetic_data, validate_symptoms
 
 class RecommenderTests(unittest.TestCase):
     def test_distance(self):
